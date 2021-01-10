@@ -1,0 +1,9 @@
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\Stock-Tracking.exe.config
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\Stock-Tracking.exe
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\Stock-Tracking.pdb
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csprojAssemblyReference.cache
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Properties.Resources.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csproj.GenerateResource.cache
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csproj.CoreCompileInputs.cache
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.exe
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.pdb
