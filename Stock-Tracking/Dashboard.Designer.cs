@@ -265,6 +265,7 @@ namespace Stock_Tracking
             this.btn_product_insert.TabIndex = 9;
             this.btn_product_insert.Text = "EKLE";
             this.btn_product_insert.UseVisualStyleBackColor = true;
+            this.btn_product_insert.Click += new System.EventHandler(this.btn_product_insert_Click);
             // 
             // btn_product_update
             // 
