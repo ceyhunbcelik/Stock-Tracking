@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Factory_StockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="worker_id" Type="int" />
+    <Property Name="rank" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="intake_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="worker_id" Type="int" />
+    <Property Name="amount" Type="int" />
+    <Property Name="intake_date" Type="date" />
+  </EntityType>
+  <EntityType Name="product_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="brand" Type="varchar" MaxLength="50" />
+    <Property Name="model" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="supplier_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="50" />
+    <Property Name="person" Type="varchar" MaxLength="50" />
+    <Property Name="rank" Type="varchar" MaxLength="50" />
+    <Property Name="phone_1" Type="varchar" MaxLength="20" />
+    <Property Name="phone_2" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="text" />
+  </EntityType>
+  <EntityType Name="supply_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="supplier_id" Type="int" />
+    <Property Name="admin_id" Type="int" />
+    <Property Name="amount" Type="int" />
+    <Property Name="price" Type="int" />
+    <Property Name="transaction_date" Type="date" />
+  </EntityType>
+  <EntityType Name="worker_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="identification" Type="varchar" MaxLength="15" />
+    <Property Name="name_surname" Type="varchar" MaxLength="50" />
+    <Property Name="rank" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="text" />
+  </EntityType>
+  <EntityContainer Name="DB_Factory_StockModelStoreContainer">
+    <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="intake_table" EntityType="Self.intake_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product_table" EntityType="Self.product_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supplier_table" EntityType="Self.supplier_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supply_table" EntityType="Self.supply_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="worker_table" EntityType="Self.worker_table" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_Factory_StockModelStoreContainer" CdmEntityContainer="DB_Factory_Stock">
+    <EntitySetMapping Name="admin_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.admin_table">
+        <MappingFragment StoreEntitySet="admin_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="intake_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.intake_table">
+        <MappingFragment StoreEntitySet="intake_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="intake_date" ColumnName="intake_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.product_table">
+        <MappingFragment StoreEntitySet="product_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.supplier_table">
+        <MappingFragment StoreEntitySet="supplier_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="person" ColumnName="person" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="phone_1" ColumnName="phone_1" />
+          <ScalarProperty Name="phone_2" ColumnName="phone_2" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supply_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.supply_table">
+        <MappingFragment StoreEntitySet="supply_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="transaction_date" ColumnName="transaction_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="worker_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.worker_table">
+        <MappingFragment StoreEntitySet="worker_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="name_surname" ColumnName="name_surname" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

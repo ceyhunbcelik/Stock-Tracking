@@ -7,3 +7,9 @@ C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.cs
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csproj.CoreCompileInputs.cache
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.exe
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.pdb
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.dll
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.xml
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Dashboard.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csproj.CopyComplete

@@ -30,9 +30,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
           <Property Name="brand" Type="varchar" MaxLength="50" />
           <Property Name="model" Type="varchar" MaxLength="100" />
-          <Property Name="code" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="text" />
         </EntityType>
         <EntityType Name="supplier_table">
