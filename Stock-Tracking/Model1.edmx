@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_Factory_StockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="worker_id" Type="int" />
+          <Property Name="rank" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="intake_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="worker_id" Type="int" />
+          <Property Name="amount" Type="int" />
+          <Property Name="intake_date" Type="date" />
+        </EntityType>
+        <EntityType Name="product_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand" Type="varchar" MaxLength="50" />
+          <Property Name="model" Type="varchar" MaxLength="100" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="supplier_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="50" />
+          <Property Name="person" Type="varchar" MaxLength="50" />
+          <Property Name="rank" Type="varchar" MaxLength="50" />
+          <Property Name="phone_1" Type="varchar" MaxLength="20" />
+          <Property Name="phone_2" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="text" />
+        </EntityType>
+        <EntityType Name="supply_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="supplier_id" Type="int" />
+          <Property Name="admin_id" Type="int" />
+          <Property Name="amount" Type="int" />
+          <Property Name="price" Type="int" />
+          <Property Name="transaction_date" Type="date" />
+        </EntityType>
+        <EntityType Name="worker_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="identification" Type="varchar" MaxLength="15" />
+          <Property Name="name_surname" Type="varchar" MaxLength="50" />
+          <Property Name="rank" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="text" />
+        </EntityType>
+        <EntityContainer Name="DB_Factory_StockModelStoreContainer">
+          <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="intake_table" EntityType="Self.intake_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product_table" EntityType="Self.product_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supplier_table" EntityType="Self.supplier_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supply_table" EntityType="Self.supply_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="worker_table" EntityType="Self.worker_table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_Factory_StockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="worker_id" Type="Int32" />
+          <Property Name="rank" Type="Byte" />
+        </EntityType>
+        <EntityType Name="intake_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="worker_id" Type="Int32" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="intake_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="product_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="supplier_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="phone_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="supply_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="supplier_id" Type="Int32" />
+          <Property Name="admin_id" Type="Int32" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="transaction_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="worker_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="identification" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="name_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DB_Factory_Stock" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin_table" EntityType="Self.admin_table" />
+          <EntitySet Name="intake_table" EntityType="Self.intake_table" />
+          <EntitySet Name="product_table" EntityType="Self.product_table" />
+          <EntitySet Name="supplier_table" EntityType="Self.supplier_table" />
+          <EntitySet Name="supply_table" EntityType="Self.supply_table" />
+          <EntitySet Name="worker_table" EntityType="Self.worker_table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_Factory_StockModelStoreContainer" CdmEntityContainer="DB_Factory_Stock">
+          <EntitySetMapping Name="admin_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.admin_table">
+              <MappingFragment StoreEntitySet="admin_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="intake_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.intake_table">
+              <MappingFragment StoreEntitySet="intake_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="intake_date" ColumnName="intake_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.product_table">
+              <MappingFragment StoreEntitySet="product_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplier_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.supplier_table">
+              <MappingFragment StoreEntitySet="supplier_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="person" ColumnName="person" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="phone_1" ColumnName="phone_1" />
+                <ScalarProperty Name="phone_2" ColumnName="phone_2" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supply_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.supply_table">
+              <MappingFragment StoreEntitySet="supply_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="transaction_date" ColumnName="transaction_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="worker_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.worker_table">
+              <MappingFragment StoreEntitySet="worker_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="identification" ColumnName="identification" />
+                <ScalarProperty Name="name_surname" ColumnName="name_surname" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
