@@ -11,5 +11,7 @@ C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.d
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.xml
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Dashboard.resources
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.csproj.CopyComplete
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Records.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Dashboards.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Transfers.resources

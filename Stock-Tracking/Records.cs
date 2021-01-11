@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace Stock_Tracking
 {
-    public partial class Dashboard : Form
+    public partial class Records : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
 
         public int productID;
         public int supplierID;
+        public int workerID;
 
-        public Dashboard()
+        public Records()
         {
             InitializeComponent();
         }
@@ -26,6 +27,7 @@ namespace Stock_Tracking
         {
             products();
             suppliers();
+            workers();
         }
 
         // Product Starts Here
@@ -80,6 +82,16 @@ namespace Stock_Tracking
 
             db.product_table.Add(product);
             db.SaveChanges();
+
+            stock_table stock = new stock_table
+            {
+                product_id = product.id,
+                amount = 0
+            };
+
+            db.stock_table.Add(stock);
+            db.SaveChanges();
+
             MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
             products();
             tb_product_clear();
@@ -271,5 +283,129 @@ namespace Stock_Tracking
 
             datagrid_supplier.DataSource = query.ToList();
         }
+        // Supplier Ends Here
+
+        // Worker Starts Here
+        private void workers()
+        {
+            var query = from item in db.worker_table
+                        select new
+                        {
+                            ID = item.id,
+                            TC = item.identification,
+                            AD_SOYAD = item.name_surname,
+                            GÖREVİ = item.rank,
+                            TELEFON = item.phone
+                        };
+
+            datagrid_worker.DataSource = query.ToList();
+        }
+
+        private void tb_worker_clear()
+        {
+            tb_worker_identification.Text = "";
+            tb_worker_name_surname.Text = "";
+            tb_worker_rank.Text = "";
+            tb_worker_phone.Text = "";
+            tb_worker_address.Text = "";
+        }
+
+        private void datagrid_worker_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int GridID = e.RowIndex;
+
+            DataGridViewRow selectedWorker = datagrid_worker.Rows[GridID];
+
+            workerID = Convert.ToInt32(selectedWorker.Cells[0].Value.ToString());
+            tb_worker_identification.Text = selectedWorker.Cells[1].Value.ToString();
+            tb_worker_name_surname.Text = selectedWorker.Cells[2].Value.ToString();
+            tb_worker_rank.Text = selectedWorker.Cells[3].Value.ToString();
+            tb_worker_phone.Text = selectedWorker.Cells[4].Value.ToString();
+
+            var query = (from item in db.worker_table
+                         where item.id == workerID
+                         select item).FirstOrDefault();
+
+            tb_worker_address.Text = query.address.ToString();
+        }
+
+        private void btn_worker_insert_Click(object sender, EventArgs e)
+        {
+            worker_table worker = new worker_table
+            {
+                identification = tb_worker_identification.Text,
+                name_surname = tb_worker_name_surname.Text,
+                rank = tb_worker_rank.Text,
+                phone = tb_worker_phone.Text,
+                address = tb_worker_address.Text
+            };
+
+            db.worker_table.Add(worker);
+            db.SaveChanges();
+            MessageBox.Show("Çalışan Başarıyla Kaydedilmiştir.");
+            workers();
+            tb_worker_clear();
+        }
+
+        private void btn_worker_update_Click(object sender, EventArgs e)
+        {
+            var update = db.worker_table.Find(workerID);
+
+            update.identification = tb_worker_identification.Text;
+            update.name_surname = tb_worker_name_surname.Text;
+            update.rank = tb_worker_rank.Text;
+            update.phone = tb_worker_phone.Text;
+            update.address = tb_worker_address.Text;
+
+            db.SaveChanges();
+            MessageBox.Show("Çalışan Başarıyla Güncellenmiştir.");
+            workers();
+            tb_worker_clear();
+        }
+
+        private void btn_worker_delete_Click(object sender, EventArgs e)
+        {
+            var delete = db.worker_table.Find(workerID);
+
+            db.worker_table.Remove(delete);
+
+            db.SaveChanges();
+            MessageBox.Show("Çalışan Başarıyla Silinmiştir.");
+            workers();
+            tb_worker_clear();
+        }
+
+        private void tb_worker_like_identification_TextChanged(object sender, EventArgs e)
+        {
+            var query = from item in db.worker_table
+                        where item.identification.Contains(tb_worker_like_identification.Text)
+                        select new
+                        {
+                            ID = item.id,
+                            TC = item.identification,
+                            AD_SOYAD = item.name_surname,
+                            GÖREVİ = item.rank,
+                            TELEFON = item.phone
+                        };
+
+            datagrid_worker.DataSource = query.ToList();
+        }
+
+        private void tb_worker_like_name_surname_TextChanged(object sender, EventArgs e)
+        {
+            var query = from item in db.worker_table
+                        where item.name_surname.Contains(tb_worker_like_name_surname.Text)
+                        select new
+                        {
+                            ID = item.id,
+                            TC = item.identification,
+                            AD_SOYAD = item.name_surname,
+                            GÖREVİ = item.rank,
+                            TELEFON = item.phone
+                        };
+
+            datagrid_worker.DataSource = query.ToList();
+        }
+        // Worker Ends Here
     }
 }

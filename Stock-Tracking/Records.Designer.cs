@@ -1,7 +1,7 @@
 ﻿
 namespace Stock_Tracking
 {
-    partial class Dashboard
+    partial class Records
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -31,6 +31,27 @@ namespace Stock_Tracking
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.datagrid_intake = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.datagrid_supply = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.datagrid_stock = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tb_product_like_model = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,7 +92,7 @@ namespace Stock_Tracking
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tb_worker_identification = new System.Windows.Forms.MaskedTextBox();
-            this.tb_worker_like_rank = new System.Windows.Forms.TextBox();
+            this.tb_worker_like_name_surname = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tb_worker_like_identification = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -89,6 +110,13 @@ namespace Stock_Tracking
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_intake)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_supply)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_stock)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_product)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -111,13 +139,223 @@ namespace Stock_Tracking
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(972, 458);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "GÖSTERGE PANELİ";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.datagrid_intake);
+            this.groupBox3.Location = new System.Drawing.Point(652, 1);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(314, 451);
+            this.groupBox3.TabIndex = 54;
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox5.Location = new System.Drawing.Point(6, 420);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(302, 24);
+            this.textBox5.TabIndex = 58;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.Location = new System.Drawing.Point(6, 397);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(110, 20);
+            this.label29.TabIndex = 57;
+            this.label29.Text = "ÇALIŞAN ADI";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox6.Location = new System.Drawing.Point(6, 370);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(302, 24);
+            this.textBox6.TabIndex = 56;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.Location = new System.Drawing.Point(6, 347);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(43, 20);
+            this.label30.TabIndex = 55;
+            this.label30.Text = "KOD";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Location = new System.Drawing.Point(2, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(112, 20);
+            this.label24.TabIndex = 54;
+            this.label24.Text = "ALIM LİSTESİ";
+            // 
+            // datagrid_intake
+            // 
+            this.datagrid_intake.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_intake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_intake.Location = new System.Drawing.Point(6, 32);
+            this.datagrid_intake.Name = "datagrid_intake";
+            this.datagrid_intake.Size = new System.Drawing.Size(302, 312);
+            this.datagrid_intake.TabIndex = 53;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.datagrid_supply);
+            this.groupBox2.Location = new System.Drawing.Point(332, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(314, 451);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox3.Location = new System.Drawing.Point(6, 420);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(302, 24);
+            this.textBox3.TabIndex = 57;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.Location = new System.Drawing.Point(6, 397);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(67, 20);
+            this.label27.TabIndex = 56;
+            this.label27.Text = "ŞİRKET";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox4.Location = new System.Drawing.Point(6, 370);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(302, 24);
+            this.textBox4.TabIndex = 55;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.Location = new System.Drawing.Point(6, 347);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 20);
+            this.label28.TabIndex = 54;
+            this.label28.Text = "KOD";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.Location = new System.Drawing.Point(2, 10);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(144, 20);
+            this.label23.TabIndex = 51;
+            this.label23.Text = "TEDARİK LİSTESİ";
+            // 
+            // datagrid_supply
+            // 
+            this.datagrid_supply.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_supply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_supply.Location = new System.Drawing.Point(6, 33);
+            this.datagrid_supply.Name = "datagrid_supply";
+            this.datagrid_supply.Size = new System.Drawing.Size(302, 311);
+            this.datagrid_supply.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.datagrid_stock);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Location = new System.Drawing.Point(6, 1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 450);
+            this.groupBox1.TabIndex = 53;
+            this.groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.Location = new System.Drawing.Point(6, 420);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 24);
+            this.textBox1.TabIndex = 53;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.Location = new System.Drawing.Point(6, 397);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(66, 20);
+            this.label25.TabIndex = 52;
+            this.label25.Text = "MODEL";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox2.Location = new System.Drawing.Point(6, 370);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(308, 24);
+            this.textBox2.TabIndex = 51;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.Location = new System.Drawing.Point(6, 347);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 20);
+            this.label26.TabIndex = 50;
+            this.label26.Text = "KOD";
+            // 
+            // datagrid_stock
+            // 
+            this.datagrid_stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_stock.Location = new System.Drawing.Point(6, 32);
+            this.datagrid_stock.Name = "datagrid_stock";
+            this.datagrid_stock.Size = new System.Drawing.Size(308, 312);
+            this.datagrid_stock.TabIndex = 49;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Location = new System.Drawing.Point(2, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(169, 20);
+            this.label17.TabIndex = 48;
+            this.label17.Text = "STOKTAKİ ÜRÜNLER";
             // 
             // tabPage2
             // 
@@ -524,7 +762,7 @@ namespace Stock_Tracking
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tb_worker_identification);
-            this.tabPage4.Controls.Add(this.tb_worker_like_rank);
+            this.tabPage4.Controls.Add(this.tb_worker_like_name_surname);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.tb_worker_like_identification);
             this.tabPage4.Controls.Add(this.label16);
@@ -558,13 +796,14 @@ namespace Stock_Tracking
             this.tb_worker_identification.Size = new System.Drawing.Size(228, 24);
             this.tb_worker_identification.TabIndex = 49;
             // 
-            // tb_worker_like_rank
+            // tb_worker_like_name_surname
             // 
-            this.tb_worker_like_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_like_rank.Location = new System.Drawing.Point(477, 8);
-            this.tb_worker_like_rank.Name = "tb_worker_like_rank";
-            this.tb_worker_like_rank.Size = new System.Drawing.Size(252, 24);
-            this.tb_worker_like_rank.TabIndex = 48;
+            this.tb_worker_like_name_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_like_name_surname.Location = new System.Drawing.Point(490, 8);
+            this.tb_worker_like_name_surname.Name = "tb_worker_like_name_surname";
+            this.tb_worker_like_name_surname.Size = new System.Drawing.Size(239, 24);
+            this.tb_worker_like_name_surname.TabIndex = 48;
+            this.tb_worker_like_name_surname.TextChanged += new System.EventHandler(this.tb_worker_like_name_surname_TextChanged);
             // 
             // label15
             // 
@@ -572,9 +811,9 @@ namespace Stock_Tracking
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label15.Location = new System.Drawing.Point(339, 10);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(132, 20);
+            this.label15.Size = new System.Drawing.Size(145, 20);
             this.label15.TabIndex = 47;
-            this.label15.Text = "ÜNVANA GÖRE:";
+            this.label15.Text = "ÇALIŞANA GÖRE:";
             // 
             // tb_worker_like_identification
             // 
@@ -583,6 +822,7 @@ namespace Stock_Tracking
             this.tb_worker_like_identification.Name = "tb_worker_like_identification";
             this.tb_worker_like_identification.Size = new System.Drawing.Size(204, 24);
             this.tb_worker_like_identification.TabIndex = 46;
+            this.tb_worker_like_identification.TextChanged += new System.EventHandler(this.tb_worker_like_identification_TextChanged);
             // 
             // label16
             // 
@@ -596,11 +836,13 @@ namespace Stock_Tracking
             // 
             // datagrid_worker
             // 
+            this.datagrid_worker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagrid_worker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_worker.Location = new System.Drawing.Point(0, 38);
             this.datagrid_worker.Name = "datagrid_worker";
             this.datagrid_worker.Size = new System.Drawing.Size(729, 413);
             this.datagrid_worker.TabIndex = 44;
+            this.datagrid_worker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_worker_CellClick);
             // 
             // btn_worker_delete
             // 
@@ -611,6 +853,7 @@ namespace Stock_Tracking
             this.btn_worker_delete.TabIndex = 43;
             this.btn_worker_delete.Text = "SİL";
             this.btn_worker_delete.UseVisualStyleBackColor = true;
+            this.btn_worker_delete.Click += new System.EventHandler(this.btn_worker_delete_Click);
             // 
             // btn_worker_update
             // 
@@ -621,6 +864,7 @@ namespace Stock_Tracking
             this.btn_worker_update.TabIndex = 42;
             this.btn_worker_update.Text = "GÜNCELLE";
             this.btn_worker_update.UseVisualStyleBackColor = true;
+            this.btn_worker_update.Click += new System.EventHandler(this.btn_worker_update_Click);
             // 
             // btn_worker_insert
             // 
@@ -631,6 +875,7 @@ namespace Stock_Tracking
             this.btn_worker_insert.TabIndex = 41;
             this.btn_worker_insert.Text = "EKLE";
             this.btn_worker_insert.UseVisualStyleBackColor = true;
+            this.btn_worker_insert.Click += new System.EventHandler(this.btn_worker_insert_Click);
             // 
             // label18
             // 
@@ -716,16 +961,26 @@ namespace Stock_Tracking
             this.label22.TabIndex = 29;
             this.label22.Text = "T.C KİMLİK";
             // 
-            // Dashboard
+            // Records
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 485);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Dashboard";
-            this.Text = "Form1";
+            this.Name = "Records";
+            this.Text = "KAYIT PANELİ";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_intake)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_supply)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_stock)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_product)).EndInit();
@@ -782,7 +1037,7 @@ namespace Stock_Tracking
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView datagrid_supplier;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox tb_worker_like_rank;
+        private System.Windows.Forms.TextBox tb_worker_like_name_surname;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tb_worker_like_identification;
         private System.Windows.Forms.Label label16;
@@ -800,6 +1055,27 @@ namespace Stock_Tracking
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.MaskedTextBox tb_worker_identification;
+        private System.Windows.Forms.DataGridView datagrid_stock;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView datagrid_supply;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DataGridView datagrid_intake;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label26;
     }
 }
 

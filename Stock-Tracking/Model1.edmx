@@ -21,6 +21,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_id" Type="int" />
+          <Property Name="admin_id" Type="int" />
           <Property Name="worker_id" Type="int" />
           <Property Name="amount" Type="int" />
           <Property Name="intake_date" Type="date" />
@@ -34,6 +35,13 @@
           <Property Name="brand" Type="varchar" MaxLength="50" />
           <Property Name="model" Type="varchar" MaxLength="100" />
           <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="stock_table">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" />
         </EntityType>
         <EntityType Name="supplier_table">
           <Key>
@@ -74,6 +82,7 @@
           <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="intake_table" EntityType="Self.intake_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product_table" EntityType="Self.product_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stock_table" EntityType="Self.stock_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="supplier_table" EntityType="Self.supplier_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="supply_table" EntityType="Self.supply_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="worker_table" EntityType="Self.worker_table" Schema="dbo" store:Type="Tables" />
@@ -101,6 +110,7 @@
           <Property Name="worker_id" Type="Int32" />
           <Property Name="amount" Type="Int32" />
           <Property Name="intake_date" Type="DateTime" Precision="0" />
+          <Property Name="admin_id" Type="Int32" />
         </EntityType>
         <EntityType Name="product_table">
           <Key>
@@ -154,7 +164,15 @@
           <EntitySet Name="supplier_table" EntityType="Self.supplier_table" />
           <EntitySet Name="supply_table" EntityType="Self.supply_table" />
           <EntitySet Name="worker_table" EntityType="Self.worker_table" />
+          <EntitySet Name="stock_table" EntityType="DB_Factory_StockModel.stock_table" />
         </EntityContainer>
+        <EntityType Name="stock_table">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -175,6 +193,7 @@
           <EntitySetMapping Name="intake_table">
             <EntityTypeMapping TypeName="DB_Factory_StockModel.intake_table">
               <MappingFragment StoreEntitySet="intake_table">
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="worker_id" ColumnName="worker_id" />
@@ -229,6 +248,14 @@
                 <ScalarProperty Name="rank" ColumnName="rank" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stock_table">
+            <EntityTypeMapping TypeName="DB_Factory_StockModel.stock_table">
+              <MappingFragment StoreEntitySet="stock_table">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

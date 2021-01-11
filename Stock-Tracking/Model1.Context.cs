@@ -31,5 +31,6 @@ namespace Stock_Tracking
         public virtual DbSet<supplier_table> supplier_table { get; set; }
         public virtual DbSet<supply_table> supply_table { get; set; }
         public virtual DbSet<worker_table> worker_table { get; set; }
+        public virtual DbSet<stock_table> stock_table { get; set; }
     }
 }

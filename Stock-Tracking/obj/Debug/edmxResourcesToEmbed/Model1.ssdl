@@ -16,6 +16,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="product_id" Type="int" />
+    <Property Name="admin_id" Type="int" />
     <Property Name="worker_id" Type="int" />
     <Property Name="amount" Type="int" />
     <Property Name="intake_date" Type="date" />
@@ -29,6 +30,13 @@
     <Property Name="brand" Type="varchar" MaxLength="50" />
     <Property Name="model" Type="varchar" MaxLength="100" />
     <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="stock_table">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" />
   </EntityType>
   <EntityType Name="supplier_table">
     <Key>
@@ -69,6 +77,7 @@
     <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="intake_table" EntityType="Self.intake_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="product_table" EntityType="Self.product_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stock_table" EntityType="Self.stock_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="supplier_table" EntityType="Self.supplier_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="supply_table" EntityType="Self.supply_table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="worker_table" EntityType="Self.worker_table" Schema="dbo" store:Type="Tables" />

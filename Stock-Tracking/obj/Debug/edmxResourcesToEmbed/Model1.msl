@@ -15,6 +15,7 @@
     <EntitySetMapping Name="intake_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.intake_table">
         <MappingFragment StoreEntitySet="intake_table">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="product_id" ColumnName="product_id" />
           <ScalarProperty Name="worker_id" ColumnName="worker_id" />
@@ -69,6 +70,14 @@
           <ScalarProperty Name="rank" ColumnName="rank" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stock_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.stock_table">
+        <MappingFragment StoreEntitySet="stock_table">
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

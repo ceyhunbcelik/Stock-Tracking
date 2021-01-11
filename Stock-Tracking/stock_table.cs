@@ -12,13 +12,9 @@ namespace Stock_Tracking
     using System;
     using System.Collections.Generic;
     
-    public partial class intake_table
+    public partial class stock_table
     {
-        public int id { get; set; }
-        public Nullable<int> product_id { get; set; }
-        public Nullable<int> worker_id { get; set; }
+        public int product_id { get; set; }
         public Nullable<int> amount { get; set; }
-        public Nullable<System.DateTime> intake_date { get; set; }
-        public Nullable<int> admin_id { get; set; }
     }
 }

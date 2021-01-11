@@ -19,6 +19,7 @@
     <Property Name="worker_id" Type="Int32" />
     <Property Name="amount" Type="Int32" />
     <Property Name="intake_date" Type="DateTime" Precision="0" />
+    <Property Name="admin_id" Type="Int32" />
   </EntityType>
   <EntityType Name="product_table">
     <Key>
@@ -72,5 +73,13 @@
     <EntitySet Name="supplier_table" EntityType="Self.supplier_table" />
     <EntitySet Name="supply_table" EntityType="Self.supply_table" />
     <EntitySet Name="worker_table" EntityType="Self.worker_table" />
+    <EntitySet Name="stock_table" EntityType="DB_Factory_StockModel.stock_table" />
   </EntityContainer>
+  <EntityType Name="stock_table">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" />
+  </EntityType>
 </Schema>
