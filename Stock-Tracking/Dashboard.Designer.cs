@@ -49,7 +49,7 @@ namespace Stock_Tracking
             this.label1 = new System.Windows.Forms.Label();
             this.datagrid_product = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tb_supplier_like_rank = new System.Windows.Forms.TextBox();
+            this.tb_supplier_like_person = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tb_supplier_like_company = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -301,7 +301,7 @@ namespace Stock_Tracking
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.tb_supplier_like_rank);
+            this.tabPage3.Controls.Add(this.tb_supplier_like_person);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.tb_supplier_like_company);
             this.tabPage3.Controls.Add(this.label14);
@@ -329,13 +329,14 @@ namespace Stock_Tracking
             this.tabPage3.Text = "TEDARİKÇİLER";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tb_supplier_like_rank
+            // tb_supplier_like_person
             // 
-            this.tb_supplier_like_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_supplier_like_rank.Location = new System.Drawing.Point(511, 8);
-            this.tb_supplier_like_rank.Name = "tb_supplier_like_rank";
-            this.tb_supplier_like_rank.Size = new System.Drawing.Size(218, 24);
-            this.tb_supplier_like_rank.TabIndex = 28;
+            this.tb_supplier_like_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_supplier_like_person.Location = new System.Drawing.Point(511, 8);
+            this.tb_supplier_like_person.Name = "tb_supplier_like_person";
+            this.tb_supplier_like_person.Size = new System.Drawing.Size(218, 24);
+            this.tb_supplier_like_person.TabIndex = 28;
+            this.tb_supplier_like_person.TextChanged += new System.EventHandler(this.tb_supplier_like_person_TextChanged);
             // 
             // label13
             // 
@@ -354,6 +355,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_company.Name = "tb_supplier_like_company";
             this.tb_supplier_like_company.Size = new System.Drawing.Size(204, 24);
             this.tb_supplier_like_company.TabIndex = 26;
+            this.tb_supplier_like_company.TextChanged += new System.EventHandler(this.tb_supplier_like_company_TextChanged);
             // 
             // label14
             // 
@@ -367,11 +369,13 @@ namespace Stock_Tracking
             // 
             // datagrid_supplier
             // 
+            this.datagrid_supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagrid_supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_supplier.Location = new System.Drawing.Point(0, 38);
             this.datagrid_supplier.Name = "datagrid_supplier";
             this.datagrid_supplier.Size = new System.Drawing.Size(729, 413);
             this.datagrid_supplier.TabIndex = 24;
+            this.datagrid_supplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_supplier_CellClick);
             // 
             // btn_supplier_delete
             // 
@@ -382,6 +386,7 @@ namespace Stock_Tracking
             this.btn_supplier_delete.TabIndex = 23;
             this.btn_supplier_delete.Text = "SİL";
             this.btn_supplier_delete.UseVisualStyleBackColor = true;
+            this.btn_supplier_delete.Click += new System.EventHandler(this.btn_supplier_delete_Click);
             // 
             // btn_supplier_update
             // 
@@ -392,6 +397,7 @@ namespace Stock_Tracking
             this.btn_supplier_update.TabIndex = 22;
             this.btn_supplier_update.Text = "GÜNCELLE";
             this.btn_supplier_update.UseVisualStyleBackColor = true;
+            this.btn_supplier_update.Click += new System.EventHandler(this.btn_supplier_update_Click);
             // 
             // btn_supplier_insert
             // 
@@ -770,7 +776,7 @@ namespace Stock_Tracking
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_supplier_company;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_supplier_like_rank;
+        private System.Windows.Forms.TextBox tb_supplier_like_person;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tb_supplier_like_company;
         private System.Windows.Forms.Label label14;
