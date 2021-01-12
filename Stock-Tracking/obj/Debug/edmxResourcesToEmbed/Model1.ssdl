@@ -8,7 +8,6 @@
     <Property Name="username" Type="varchar" MaxLength="50" />
     <Property Name="password" Type="varchar" MaxLength="50" />
     <Property Name="worker_id" Type="int" />
-    <Property Name="rank" Type="tinyint" />
   </EntityType>
   <EntityType Name="intake_table">
     <Key>

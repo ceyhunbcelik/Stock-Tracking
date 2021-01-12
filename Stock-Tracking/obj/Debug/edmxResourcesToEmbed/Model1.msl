@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DB_Factory_StockModelStoreContainer" CdmEntityContainer="DB_Factory_Stock">
-    <EntitySetMapping Name="admin_table">
-      <EntityTypeMapping TypeName="DB_Factory_StockModel.admin_table">
-        <MappingFragment StoreEntitySet="admin_table">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
-          <ScalarProperty Name="rank" ColumnName="rank" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="intake_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.intake_table">
         <MappingFragment StoreEntitySet="intake_table">
@@ -78,6 +67,16 @@
         <MappingFragment StoreEntitySet="stock_table">
           <ScalarProperty Name="amount" ColumnName="amount" />
           <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_table">
+      <EntityTypeMapping TypeName="DB_Factory_StockModel.admin_table">
+        <MappingFragment StoreEntitySet="admin_table">
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

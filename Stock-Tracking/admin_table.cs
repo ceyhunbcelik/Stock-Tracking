@@ -18,6 +18,5 @@ namespace Stock_Tracking
         public string username { get; set; }
         public string password { get; set; }
         public Nullable<int> worker_id { get; set; }
-        public Nullable<byte> rank { get; set; }
     }
 }

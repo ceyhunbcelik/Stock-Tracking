@@ -15,3 +15,5 @@ C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock-Tracking.cs
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Records.resources
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Dashboards.resources
 C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Transfers.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Admin.resources
+C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\obj\Debug\Stock_Tracking.Login.resources

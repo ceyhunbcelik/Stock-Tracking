@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DB_Factory_StockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="admin_table">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="worker_id" Type="Int32" />
-    <Property Name="rank" Type="Byte" />
-  </EntityType>
   <EntityType Name="intake_table">
     <Key>
       <PropertyRef Name="id" />
@@ -67,13 +57,13 @@
     <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="DB_Factory_Stock" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="admin_table" EntityType="Self.admin_table" />
     <EntitySet Name="intake_table" EntityType="Self.intake_table" />
     <EntitySet Name="product_table" EntityType="Self.product_table" />
     <EntitySet Name="supplier_table" EntityType="Self.supplier_table" />
     <EntitySet Name="supply_table" EntityType="Self.supply_table" />
     <EntitySet Name="worker_table" EntityType="Self.worker_table" />
     <EntitySet Name="stock_table" EntityType="DB_Factory_StockModel.stock_table" />
+    <EntitySet Name="admin_table" EntityType="DB_Factory_StockModel.admin_table" />
   </EntityContainer>
   <EntityType Name="stock_table">
     <Key>
@@ -81,5 +71,14 @@
     </Key>
     <Property Name="product_id" Type="Int32" Nullable="false" />
     <Property Name="amount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="admin_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="worker_id" Type="Int32" />
   </EntityType>
 </Schema>
