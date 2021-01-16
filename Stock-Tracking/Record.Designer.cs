@@ -90,7 +90,12 @@ namespace Stock_Tracking
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.datagrid_worker = new System.Windows.Forms.DataGridView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tb_worker_like_name_surname = new System.Windows.Forms.TextBox();
+            this.tb_worker_like_identification = new System.Windows.Forms.TextBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.btn_worker_image = new System.Windows.Forms.Button();
             this.btn_worker_clear = new System.Windows.Forms.Button();
@@ -100,23 +105,18 @@ namespace Stock_Tracking
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.picture_worker = new System.Windows.Forms.PictureBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tb_worker_address = new System.Windows.Forms.TextBox();
+            this.tb_worker_phone = new System.Windows.Forms.MaskedTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tb_worker_rank = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tb_worker_name_surname = new System.Windows.Forms.TextBox();
+            this.tb_worker_identification = new System.Windows.Forms.MaskedTextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.open_file_dialog = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.datagrid_worker = new System.Windows.Forms.DataGridView();
-            this.tb_worker_like_identification = new System.Windows.Forms.TextBox();
-            this.tb_worker_like_name_surname = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.tb_worker_identification = new System.Windows.Forms.MaskedTextBox();
-            this.tb_worker_name_surname = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tb_worker_rank = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.tb_worker_phone = new System.Windows.Forms.MaskedTextBox();
-            this.tb_worker_address = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -136,12 +136,12 @@ namespace Stock_Tracking
             this.groupBox3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_worker)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_worker)).BeginInit();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_worker)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -297,6 +297,7 @@ namespace Stock_Tracking
             this.datagrid_product.Name = "datagrid_product";
             this.datagrid_product.Size = new System.Drawing.Size(1022, 339);
             this.datagrid_product.TabIndex = 42;
+            this.datagrid_product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_product_CellClick);
             // 
             // groupBox9
             // 
@@ -374,6 +375,7 @@ namespace Stock_Tracking
             this.btn_product_delete.Size = new System.Drawing.Size(80, 70);
             this.btn_product_delete.TabIndex = 63;
             this.btn_product_delete.UseVisualStyleBackColor = true;
+            this.btn_product_delete.Click += new System.EventHandler(this.btn_product_delete_Click);
             // 
             // btn_product_insert
             // 
@@ -387,6 +389,7 @@ namespace Stock_Tracking
             this.btn_product_insert.Size = new System.Drawing.Size(80, 70);
             this.btn_product_insert.TabIndex = 61;
             this.btn_product_insert.UseVisualStyleBackColor = true;
+            this.btn_product_insert.Click += new System.EventHandler(this.btn_product_insert_Click);
             // 
             // btn_product_update
             // 
@@ -400,6 +403,7 @@ namespace Stock_Tracking
             this.btn_product_update.Size = new System.Drawing.Size(80, 70);
             this.btn_product_update.TabIndex = 62;
             this.btn_product_update.UseVisualStyleBackColor = true;
+            this.btn_product_update.Click += new System.EventHandler(this.btn_product_update_Click);
             // 
             // groupBox7
             // 
@@ -407,6 +411,7 @@ namespace Stock_Tracking
             this.groupBox7.Controls.Add(this.tb_product_like_code);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(8, 6);
             this.groupBox7.Name = "groupBox7";
@@ -422,6 +427,7 @@ namespace Stock_Tracking
             this.tb_product_like_model.Name = "tb_product_like_model";
             this.tb_product_like_model.Size = new System.Drawing.Size(302, 24);
             this.tb_product_like_model.TabIndex = 60;
+            this.tb_product_like_model.TextChanged += new System.EventHandler(this.tb_product_like_model_TextChanged);
             // 
             // tb_product_like_code
             // 
@@ -430,6 +436,7 @@ namespace Stock_Tracking
             this.tb_product_like_code.Name = "tb_product_like_code";
             this.tb_product_like_code.Size = new System.Drawing.Size(302, 24);
             this.tb_product_like_code.TabIndex = 56;
+            this.tb_product_like_code.TextChanged += new System.EventHandler(this.tb_product_like_code_TextChanged);
             // 
             // label6
             // 
@@ -507,6 +514,7 @@ namespace Stock_Tracking
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.tb_supplier_like_person);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
@@ -845,12 +853,22 @@ namespace Stock_Tracking
             this.groupBox11.TabIndex = 54;
             this.groupBox11.TabStop = false;
             // 
+            // datagrid_worker
+            // 
+            this.datagrid_worker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_worker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_worker.Location = new System.Drawing.Point(6, 10);
+            this.datagrid_worker.Name = "datagrid_worker";
+            this.datagrid_worker.Size = new System.Drawing.Size(1022, 340);
+            this.datagrid_worker.TabIndex = 63;
+            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.label16);
             this.groupBox12.Controls.Add(this.label15);
             this.groupBox12.Controls.Add(this.tb_worker_like_name_surname);
             this.groupBox12.Controls.Add(this.tb_worker_like_identification);
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox12.ForeColor = System.Drawing.Color.White;
             this.groupBox12.Location = new System.Drawing.Point(8, 6);
             this.groupBox12.Name = "groupBox12";
@@ -858,6 +876,42 @@ namespace Stock_Tracking
             this.groupBox12.TabIndex = 53;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "ARAMA";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(41, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 20);
+            this.label16.TabIndex = 69;
+            this.label16.Text = "T.C YE GÖRE:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(9, 64);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(159, 20);
+            this.label15.TabIndex = 68;
+            this.label15.Text = "ÇALIŞANA GÖRE:";
+            // 
+            // tb_worker_like_name_surname
+            // 
+            this.tb_worker_like_name_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_like_name_surname.Location = new System.Drawing.Point(174, 62);
+            this.tb_worker_like_name_surname.Name = "tb_worker_like_name_surname";
+            this.tb_worker_like_name_surname.Size = new System.Drawing.Size(302, 24);
+            this.tb_worker_like_name_surname.TabIndex = 67;
+            // 
+            // tb_worker_like_identification
+            // 
+            this.tb_worker_like_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_like_identification.Location = new System.Drawing.Point(174, 21);
+            this.tb_worker_like_identification.Name = "tb_worker_like_identification";
+            this.tb_worker_like_identification.Size = new System.Drawing.Size(302, 24);
+            this.tb_worker_like_identification.TabIndex = 65;
             // 
             // groupBox13
             // 
@@ -986,6 +1040,89 @@ namespace Stock_Tracking
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "BAŞLIKLAR";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.Location = new System.Drawing.Point(37, 139);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(76, 20);
+            this.label19.TabIndex = 76;
+            this.label19.Text = "ADRES:";
+            // 
+            // tb_worker_address
+            // 
+            this.tb_worker_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_address.Location = new System.Drawing.Point(123, 137);
+            this.tb_worker_address.Multiline = true;
+            this.tb_worker_address.Name = "tb_worker_address";
+            this.tb_worker_address.Size = new System.Drawing.Size(184, 106);
+            this.tb_worker_address.TabIndex = 75;
+            // 
+            // tb_worker_phone
+            // 
+            this.tb_worker_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_phone.Location = new System.Drawing.Point(123, 107);
+            this.tb_worker_phone.Mask = "(999) 000-0000";
+            this.tb_worker_phone.Name = "tb_worker_phone";
+            this.tb_worker_phone.Size = new System.Drawing.Size(184, 24);
+            this.tb_worker_phone.TabIndex = 74;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Location = new System.Drawing.Point(19, 109);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(94, 20);
+            this.label18.TabIndex = 73;
+            this.label18.Text = "TELEFON:";
+            // 
+            // tb_worker_rank
+            // 
+            this.tb_worker_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_rank.Location = new System.Drawing.Point(123, 77);
+            this.tb_worker_rank.Name = "tb_worker_rank";
+            this.tb_worker_rank.Size = new System.Drawing.Size(184, 24);
+            this.tb_worker_rank.TabIndex = 72;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(9, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(104, 20);
+            this.label22.TabIndex = 71;
+            this.label22.Text = "T.C KİMLİK:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.Location = new System.Drawing.Point(7, 49);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(106, 20);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "AD SOYAD:";
+            // 
+            // tb_worker_name_surname
+            // 
+            this.tb_worker_name_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_name_surname.Location = new System.Drawing.Point(123, 47);
+            this.tb_worker_name_surname.Name = "tb_worker_name_surname";
+            this.tb_worker_name_surname.Size = new System.Drawing.Size(184, 24);
+            this.tb_worker_name_surname.TabIndex = 69;
+            // 
+            // tb_worker_identification
+            // 
+            this.tb_worker_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_worker_identification.Location = new System.Drawing.Point(123, 17);
+            this.tb_worker_identification.Mask = "00000000000";
+            this.tb_worker_identification.Name = "tb_worker_identification";
+            this.tb_worker_identification.Size = new System.Drawing.Size(184, 24);
+            this.tb_worker_identification.TabIndex = 68;
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -1000,134 +1137,6 @@ namespace Stock_Tracking
             // open_file_dialog
             // 
             this.open_file_dialog.FileName = "openFileDialog1";
-            // 
-            // datagrid_worker
-            // 
-            this.datagrid_worker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagrid_worker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_worker.Location = new System.Drawing.Point(6, 10);
-            this.datagrid_worker.Name = "datagrid_worker";
-            this.datagrid_worker.Size = new System.Drawing.Size(1022, 340);
-            this.datagrid_worker.TabIndex = 63;
-            // 
-            // tb_worker_like_identification
-            // 
-            this.tb_worker_like_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_like_identification.Location = new System.Drawing.Point(174, 21);
-            this.tb_worker_like_identification.Name = "tb_worker_like_identification";
-            this.tb_worker_like_identification.Size = new System.Drawing.Size(302, 24);
-            this.tb_worker_like_identification.TabIndex = 65;
-            // 
-            // tb_worker_like_name_surname
-            // 
-            this.tb_worker_like_name_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_like_name_surname.Location = new System.Drawing.Point(174, 62);
-            this.tb_worker_like_name_surname.Name = "tb_worker_like_name_surname";
-            this.tb_worker_like_name_surname.Size = new System.Drawing.Size(302, 24);
-            this.tb_worker_like_name_surname.TabIndex = 67;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(9, 64);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(159, 20);
-            this.label15.TabIndex = 68;
-            this.label15.Text = "ÇALIŞANA GÖRE:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.Location = new System.Drawing.Point(41, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 20);
-            this.label16.TabIndex = 69;
-            this.label16.Text = "T.C YE GÖRE:";
-            // 
-            // tb_worker_identification
-            // 
-            this.tb_worker_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_identification.Location = new System.Drawing.Point(123, 17);
-            this.tb_worker_identification.Mask = "00000000000";
-            this.tb_worker_identification.Name = "tb_worker_identification";
-            this.tb_worker_identification.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_identification.TabIndex = 68;
-            // 
-            // tb_worker_name_surname
-            // 
-            this.tb_worker_name_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_name_surname.Location = new System.Drawing.Point(123, 47);
-            this.tb_worker_name_surname.Name = "tb_worker_name_surname";
-            this.tb_worker_name_surname.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_name_surname.TabIndex = 69;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(7, 49);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(106, 20);
-            this.label21.TabIndex = 70;
-            this.label21.Text = "AD SOYAD:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(9, 19);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(104, 20);
-            this.label22.TabIndex = 71;
-            this.label22.Text = "T.C KİMLİK:";
-            // 
-            // tb_worker_rank
-            // 
-            this.tb_worker_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_rank.Location = new System.Drawing.Point(123, 77);
-            this.tb_worker_rank.Name = "tb_worker_rank";
-            this.tb_worker_rank.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_rank.TabIndex = 72;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(19, 109);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 20);
-            this.label18.TabIndex = 73;
-            this.label18.Text = "TELEFON:";
-            // 
-            // tb_worker_phone
-            // 
-            this.tb_worker_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_phone.Location = new System.Drawing.Point(123, 107);
-            this.tb_worker_phone.Mask = "(999) 000-0000";
-            this.tb_worker_phone.Name = "tb_worker_phone";
-            this.tb_worker_phone.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_phone.TabIndex = 74;
-            // 
-            // tb_worker_address
-            // 
-            this.tb_worker_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_worker_address.Location = new System.Drawing.Point(123, 137);
-            this.tb_worker_address.Multiline = true;
-            this.tb_worker_address.Name = "tb_worker_address";
-            this.tb_worker_address.Size = new System.Drawing.Size(184, 106);
-            this.tb_worker_address.TabIndex = 75;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.Location = new System.Drawing.Point(37, 139);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(76, 20);
-            this.label19.TabIndex = 76;
-            this.label19.Text = "ADRES:";
             // 
             // Record
             // 
@@ -1167,6 +1176,7 @@ namespace Stock_Tracking
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_worker)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -1174,7 +1184,6 @@ namespace Stock_Tracking
             ((System.ComponentModel.ISupportInitialize)(this.picture_worker)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_worker)).EndInit();
             this.ResumeLayout(false);
 
         }

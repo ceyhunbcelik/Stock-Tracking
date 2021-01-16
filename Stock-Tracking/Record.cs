@@ -14,11 +14,11 @@ namespace Stock_Tracking
     public partial class Record : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
-        public string target_folder = @"C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\img\product\";
+        public string target_folder_product = @"C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\img\product\";
 
         public int AdminID;
 
-        public int productID;
+        public int productID = 0;
         public int supplierID;
         public int workerID;
 
@@ -34,7 +34,7 @@ namespace Stock_Tracking
             workers();
         }
 
-        // Product Starts Here
+        // Product - List All Values
         private void products()
         {
             var query = from item in db.product_table
@@ -47,7 +47,7 @@ namespace Stock_Tracking
                         };
             datagrid_product.DataSource = query.ToList();
         }
-
+        // Product - Clear Input
         private void tb_product_clear()
         {
             tb_product_code.Text = "";
@@ -56,7 +56,7 @@ namespace Stock_Tracking
             tb_product_description.Text = "";
             picture_product.ImageLocation = "";
         }
-
+        // Product - Fetch Selected Value in DataGrid
         private void datagrid_product_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -76,16 +76,16 @@ namespace Stock_Tracking
             tb_product_description.Text = query.description.ToString();
 
             picture_product.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_product.ImageLocation = target_folder + query.image.ToString();
+            picture_product.ImageLocation = target_folder_product + query.image.ToString();
         }
-
+        // Product - Select Image
         public string file_name, file_source;
         private void btn_product_image_Click(object sender, EventArgs e)
         {
-            open_file_dialog.Title = "Lütfen Resimi Seçiniz";
+            open_file_dialog.Title = "Lütfen Resim Seçiniz";
             open_file_dialog.FileName = "";
 
-            if(open_file_dialog.ShowDialog() == DialogResult.OK)
+            if (open_file_dialog.ShowDialog() == DialogResult.OK)
             {
                 file_name = open_file_dialog.SafeFileName.ToString();
                 file_source = open_file_dialog.FileName.ToString();
@@ -95,86 +95,163 @@ namespace Stock_Tracking
             }
             else
             {
-                MessageBox.Show("Dosya Seçmediniz");
+                MessageBox.Show("Resim Seçmediniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
-
-        private void btn_product_clear_Click(object sender, EventArgs e)
-        {
-            tb_product_clear();
-        }
-
+        // Product - Save Product
         private void btn_product_insert_Click(object sender, EventArgs e)
         {
-
-
-            if (file_source != "")
+            if (
+                tb_product_code.Text.Trim().Length == 0 &&
+                tb_product_brand.Text.Trim().Length == 0 &&
+                tb_product_model.Text.Trim().Length == 0 &&
+                tb_product_description.Text.Trim().Length == 0
+            )
             {
-                if (File.Exists(target_folder + file_name))
+                MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (file_source != null)
                 {
-                    MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                    if (File.Exists(target_folder_product + file_name))
+                    {
+                        MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                    }
+                    else
+                    {
+                        product_table product = new product_table
+                        {
+                            code = tb_product_code.Text,
+                            brand = tb_product_brand.Text,
+                            model = tb_product_model.Text,
+                            description = tb_product_description.Text,
+                            image = file_name
+                        };
+
+                        File.Copy(file_source, target_folder_product + file_name);
+                        db.product_table.Add(product);
+                        db.SaveChanges();
+
+                        stock_table stock = new stock_table
+                        {
+                            product_id = product.id,
+                            amount = 0
+                        };
+
+                        db.stock_table.Add(stock);
+                        db.SaveChanges();
+
+                        MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
+                        products();
+                        tb_product_clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen Görsel Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        // Product - Update Product
+        private void btn_product_update_Click(object sender, EventArgs e)
+        {
+            if (productID == 0)
+            {
+                MessageBox.Show("Lütfen Ürünü Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (
+                    tb_product_code.Text.Trim().Length == 0 &&
+                    tb_product_brand.Text.Trim().Length == 0 &&
+                    tb_product_model.Text.Trim().Length == 0 &&
+                    tb_product_description.Text.Trim().Length == 0
+                )
+                {
+                    MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
 
-                    product_table product = new product_table
+                    var query = (from item in db.product_table
+                                 where item.id == productID
+                                 select item).FirstOrDefault();
+
+                    if(picture_product.ImageLocation == target_folder_product + query.image.ToString())
                     {
-                        code = tb_product_code.Text,
-                        brand = tb_product_brand.Text,
-                        model = tb_product_model.Text,
-                        description = tb_product_description.Text,
-                        image = file_name
-                    };
+                        var update = db.product_table.Find(productID);
 
-                    File.Copy(file_source, target_folder + file_name);
-                    db.product_table.Add(product);
-                    db.SaveChanges();
+                        update.code = tb_product_code.Text;
+                        update.brand = tb_product_brand.Text;
+                        update.model = tb_product_model.Text;
+                        update.description = tb_product_description.Text;
 
-                    stock_table stock = new stock_table
+                        db.SaveChanges();
+                        MessageBox.Show("Ürün Başarıyla Güncellenmiştir.");
+                        products();
+                        tb_product_clear();
+                    }
+                    else
                     {
-                        product_id = product.id,
-                        amount = 0
-                    };
+                        if (file_source != "")
+                        {
+                            if (File.Exists(target_folder_product + file_name))
+                            {
+                                MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                            }
+                            else
+                            {
 
-                    db.stock_table.Add(stock);
-                    db.SaveChanges();
+                                var update = db.product_table.Find(productID);
 
-                    MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
-                    products();
-                    tb_product_clear();
+                                update.code = tb_product_code.Text;
+                                update.brand = tb_product_brand.Text;
+                                update.model = tb_product_model.Text;
+                                update.description = tb_product_description.Text;
+                                update.image = file_name;
+
+                                db.SaveChanges();
+
+                                File.Copy(file_source, target_folder_product + file_name);
+                                File.Delete(target_folder_product + query.image.ToString());
+
+                                MessageBox.Show("Ürün Başarıyla Güncellenmiştir.");
+                                products();
+                                tb_product_clear();
+                            }
+                        }
+                    }
                 }
             }
-
-
         }
-
-        private void btn_product_update_Click(object sender, EventArgs e)
-        {
-            var update = db.product_table.Find(productID);
-
-            update.code = tb_product_code.Text;
-            update.brand = tb_product_brand.Text;
-            update.model = tb_product_model.Text;
-            update.description = tb_product_description.Text;
-
-            db.SaveChanges();
-            MessageBox.Show("Ürün Başarıyla Güncellenmiştir.");
-            products();
-            tb_product_clear();
-        }
-
+        // Product - Delete Product
         private void btn_product_delete_Click(object sender, EventArgs e)
         {
-            var delete = db.product_table.Find(productID);
+            if (productID == 0)
+            {
+                MessageBox.Show("Lütfen Ürünü Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var delete = db.product_table.Find(productID);
 
-            db.product_table.Remove(delete);
+                db.product_table.Remove(delete);
 
-            db.SaveChanges();
-            MessageBox.Show("Ürün Başarıyla Silinmiştir.");
-            products();
+                db.SaveChanges();
+                File.Delete(target_folder_product + delete.image.ToString());
+                MessageBox.Show("Ürün Başarıyla Silinmiştir.");
+                products();
+                tb_product_clear();
+            }
+        }
+        // Product - Clear Button
+        private void btn_product_clear_Click(object sender, EventArgs e)
+        {
             tb_product_clear();
         }
-
+        // Product - Search Product by Code
         private void tb_product_like_code_TextChanged(object sender, EventArgs e)
         {
             var query = from item in db.product_table
@@ -189,7 +266,7 @@ namespace Stock_Tracking
 
             datagrid_product.DataSource = query.ToList();
         }
-
+        // Product - Search Product by Model
         private void tb_product_like_model_TextChanged(object sender, EventArgs e)
         {
             var query = from item in db.product_table
@@ -204,9 +281,10 @@ namespace Stock_Tracking
 
             datagrid_product.DataSource = query.ToList();
         }
-        // Product Ends Here
 
-        // Supplier Start Here
+        // ------------------------------------------------------------------------------------
+
+        // Supplier - List All Values
         private void suppliers()
         {
             var query = from item in db.supplier_table
@@ -225,6 +303,7 @@ namespace Stock_Tracking
 
         private void tb_supplier_clear()
         {
+            productID = 0;
             tb_supplier_company.Text = "";
             tb_supplier_person.Text = "";
             tb_supplier_rank.Text = "";
@@ -335,6 +414,8 @@ namespace Stock_Tracking
             datagrid_supplier.DataSource = query.ToList();
         }
         // Supplier Ends Here
+
+        // ------------------------------------------------------------------------------------
 
         // Worker Starts Here
         private void workers()
