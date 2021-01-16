@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace Stock_Tracking
 {
-    public partial class Dashboards : Form
+    public partial class Dashboard : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
-        public Dashboards()
+
+        public int AdminID;
+
+        public Dashboard()
         {
             InitializeComponent();
         }
@@ -87,6 +90,17 @@ namespace Stock_Tracking
                         };
 
             datagrid_intake.DataSource = query.ToList();
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Router router = new Router
+            {
+                AdminID = AdminID
+            };
+
+            this.Hide();
+            router.Show();
         }
         // Intake Ends Here
     }

@@ -13,6 +13,9 @@ namespace Stock_Tracking
     public partial class Admin : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
+
+        public int AdminID;
+
         public Admin()
         {
             InitializeComponent();
@@ -49,6 +52,17 @@ namespace Stock_Tracking
                         select item_worker.identification;
 
             cb_admin_identification.DataSource = query.ToList();
+        }
+
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Router router = new Router
+            {
+                AdminID = AdminID
+            };
+
+            this.Hide();
+            router.Show();
         }
     }
 }

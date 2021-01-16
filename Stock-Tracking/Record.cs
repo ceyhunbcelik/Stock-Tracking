@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace Stock_Tracking
 {
-    public partial class Records : Form
+    public partial class Record : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
+
+        public int AdminID;
 
         public int productID;
         public int supplierID;
         public int workerID;
 
-        public Records()
+        public Record()
         {
             InitializeComponent();
         }
@@ -405,6 +407,17 @@ namespace Stock_Tracking
                         };
 
             datagrid_worker.DataSource = query.ToList();
+        }
+
+        private void Record_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Router router = new Router
+            {
+                AdminID = AdminID
+            };
+
+            this.Hide();
+            router.Show();
         }
         // Worker Ends Here
     }

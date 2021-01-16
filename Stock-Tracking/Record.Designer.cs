@@ -1,7 +1,7 @@
 ﻿
 namespace Stock_Tracking
 {
-    partial class Records
+    partial class Record
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -711,14 +711,15 @@ namespace Stock_Tracking
             this.label22.TabIndex = 29;
             this.label22.Text = "T.C KİMLİK";
             // 
-            // Records
+            // Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 485);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Records";
+            this.Name = "Record";
             this.Text = "KAYIT PANELİ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Record_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

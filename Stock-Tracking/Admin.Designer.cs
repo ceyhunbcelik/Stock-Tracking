@@ -186,6 +186,7 @@ namespace Stock_Tracking
             this.Controls.Add(this.label22);
             this.Name = "Admin";
             this.Text = "ADMİN PANELİ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_admin)).EndInit();
             this.ResumeLayout(false);
