@@ -43,7 +43,6 @@
     <Property Name="supplier_id" Type="Int32" />
     <Property Name="admin_id" Type="Int32" />
     <Property Name="amount" Type="Int32" />
-    <Property Name="price" Type="Int32" />
     <Property Name="transaction_date" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="worker_table">

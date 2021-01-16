@@ -19,7 +19,6 @@ namespace Stock_Tracking
         public Nullable<int> supplier_id { get; set; }
         public Nullable<int> admin_id { get; set; }
         public Nullable<int> amount { get; set; }
-        public Nullable<int> price { get; set; }
         public Nullable<System.DateTime> transaction_date { get; set; }
     }
 }

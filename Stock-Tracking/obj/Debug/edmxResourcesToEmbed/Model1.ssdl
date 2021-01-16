@@ -59,7 +59,6 @@
     <Property Name="supplier_id" Type="int" />
     <Property Name="admin_id" Type="int" />
     <Property Name="amount" Type="int" />
-    <Property Name="price" Type="int" />
     <Property Name="transaction_date" Type="date" />
   </EntityType>
   <EntityType Name="worker_table">

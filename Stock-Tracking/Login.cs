@@ -18,28 +18,48 @@ namespace Stock_Tracking
             InitializeComponent();
         }
 
+        private void textbox_clear()
+        {
+            tb_admin_username.Text = "";
+            tb_admin_password.Text = "";
+        }
+
         private void btn_admin_login_Click(object sender, EventArgs e)
         {
-            var query = (from item in db.admin_table
-                         where
-                            item.username == tb_admin_username.Text &
-                            item.password == tb_admin_password.Text
-                         select item).FirstOrDefault();
-
-            if(query != null)
+            if(tb_admin_username.Text.Trim().Length == 0 && tb_admin_password.Text.Trim().Length == 0)
             {
-                Router router = new Router
-                {
-                    AdminID = query.id
-                };
-
-                this.Hide();
-                router.Show();
-            }
+                MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textbox_clear();
+            } 
             else
             {
-                MessageBox.Show("Başarısız!");
+                var query = (from item in db.admin_table
+                             where
+                                item.username == tb_admin_username.Text &
+                                item.password == tb_admin_password.Text
+                             select item).FirstOrDefault();
+
+                if (query != null)
+                {
+                    Router router = new Router
+                    {
+                        AdminID = query.id
+                    };
+
+                    this.Hide();
+                    router.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Böyle Bir Kullanıcı Bulunmamaktadır", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textbox_clear();
+                }
             }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

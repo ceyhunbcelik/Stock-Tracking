@@ -60,7 +60,6 @@ namespace Stock_Tracking
                             KOD = item_product.code,
                             ŞİRKET = item_supplier.company,
                             MİKTAR = item_supply.amount,
-                            FİYAT = item_supply.price + "₺",
                             ADMIN = item_worker.name_surname,
                             TARİH = item_supply.transaction_date
                             //TEDARİK_ID = item_supply.id
