@@ -41,10 +41,5 @@ namespace Stock_Tracking
                 MessageBox.Show("Başarısız!");
             }
         }
-
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

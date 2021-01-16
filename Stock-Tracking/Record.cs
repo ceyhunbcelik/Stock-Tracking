@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Stock_Tracking
 {
     public partial class Record : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
+        public string target_folder = @"C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\img\product\";
 
         public int AdminID;
 
@@ -52,10 +54,12 @@ namespace Stock_Tracking
             tb_product_brand.Text = "";
             tb_product_model.Text = "";
             tb_product_description.Text = "";
+            picture_product.ImageLocation = "";
         }
 
         private void datagrid_product_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             int GridID = e.RowIndex;
 
             DataGridViewRow selectedProduct = datagrid_product.Rows[GridID];
@@ -70,33 +74,78 @@ namespace Stock_Tracking
                          select item).FirstOrDefault();
 
             tb_product_description.Text = query.description.ToString();
+
+            picture_product.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture_product.ImageLocation = target_folder + query.image.ToString();
+        }
+
+        public string file_name, file_source;
+        private void btn_product_image_Click(object sender, EventArgs e)
+        {
+            open_file_dialog.Title = "Lütfen Resimi Seçiniz";
+            open_file_dialog.FileName = "";
+
+            if(open_file_dialog.ShowDialog() == DialogResult.OK)
+            {
+                file_name = open_file_dialog.SafeFileName.ToString();
+                file_source = open_file_dialog.FileName.ToString();
+
+                picture_product.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture_product.ImageLocation = open_file_dialog.FileName;
+            }
+            else
+            {
+                MessageBox.Show("Dosya Seçmediniz");
+            }
+        }
+
+        private void btn_product_clear_Click(object sender, EventArgs e)
+        {
+            tb_product_clear();
         }
 
         private void btn_product_insert_Click(object sender, EventArgs e)
         {
-            product_table product = new product_table
+
+
+            if (file_source != "")
             {
-                code = tb_product_code.Text,
-                brand = tb_product_brand.Text,
-                model = tb_product_model.Text,
-                description = tb_product_description.Text
-            };
+                if (File.Exists(target_folder + file_name))
+                {
+                    MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                }
+                else
+                {
 
-            db.product_table.Add(product);
-            db.SaveChanges();
+                    product_table product = new product_table
+                    {
+                        code = tb_product_code.Text,
+                        brand = tb_product_brand.Text,
+                        model = tb_product_model.Text,
+                        description = tb_product_description.Text,
+                        image = file_name
+                    };
 
-            stock_table stock = new stock_table
-            {
-                product_id = product.id,
-                amount = 0
-            };
+                    File.Copy(file_source, target_folder + file_name);
+                    db.product_table.Add(product);
+                    db.SaveChanges();
 
-            db.stock_table.Add(stock);
-            db.SaveChanges();
+                    stock_table stock = new stock_table
+                    {
+                        product_id = product.id,
+                        amount = 0
+                    };
 
-            MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
-            products();
-            tb_product_clear();
+                    db.stock_table.Add(stock);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
+                    products();
+                    tb_product_clear();
+                }
+            }
+
+
         }
 
         private void btn_product_update_Click(object sender, EventArgs e)
@@ -243,7 +292,7 @@ namespace Stock_Tracking
         private void btn_supplier_delete_Click(object sender, EventArgs e)
         {
             var delete = db.supplier_table.Find(supplierID);
-            
+
             db.supplier_table.Remove(delete);
 
             db.SaveChanges();
@@ -419,6 +468,7 @@ namespace Stock_Tracking
             this.Hide();
             router.Show();
         }
+
         // Worker Ends Here
     }
 }

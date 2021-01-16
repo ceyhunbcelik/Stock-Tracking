@@ -34,6 +34,7 @@
           <Property Name="brand" Type="varchar" MaxLength="50" />
           <Property Name="model" Type="varchar" MaxLength="100" />
           <Property Name="description" Type="text" />
+          <Property Name="image" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="stock_table">
           <Key>
@@ -110,6 +111,7 @@
           <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="supplier_table">
           <Key>
@@ -192,6 +194,7 @@
           <EntitySetMapping Name="product_table">
             <EntityTypeMapping TypeName="DB_Factory_StockModel.product_table">
               <MappingFragment StoreEntitySet="product_table">
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="brand" ColumnName="brand" />
                 <ScalarProperty Name="model" ColumnName="model" />

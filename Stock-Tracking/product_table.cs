@@ -19,5 +19,6 @@ namespace Stock_Tracking
         public string model { get; set; }
         public string code { get; set; }
         public string description { get; set; }
+        public string image { get; set; }
     }
 }

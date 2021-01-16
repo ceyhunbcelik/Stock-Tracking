@@ -16,6 +16,7 @@
     <EntitySetMapping Name="product_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.product_table">
         <MappingFragment StoreEntitySet="product_table">
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="brand" ColumnName="brand" />
           <ScalarProperty Name="model" ColumnName="model" />
