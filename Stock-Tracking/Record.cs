@@ -485,7 +485,7 @@ namespace Stock_Tracking
                 }
             }
         }
-
+        // Supplier - Delete Supplier
         private void btn_supplier_delete_Click(object sender, EventArgs e)
         {
             if(supplierID == 0)
@@ -508,11 +508,12 @@ namespace Stock_Tracking
 
             
         }
+        // Supplier - Clear Button
         private void btn_supplier_clear_Click(object sender, EventArgs e)
         {
             tb_supplier_clear();
         }
-
+        // Supplier - Search Supplier by Company
         private void tb_supplier_like_company_TextChanged(object sender, EventArgs e)
         {
             var query = from item in db.supplier_table
@@ -529,7 +530,7 @@ namespace Stock_Tracking
 
             datagrid_supplier.DataSource = query.ToList();
         }
-
+        // Supplier - Search Supplier by Person
         private void tb_supplier_like_person_TextChanged(object sender, EventArgs e)
         {
             var query = from item in db.supplier_table
@@ -546,7 +547,6 @@ namespace Stock_Tracking
 
             datagrid_supplier.DataSource = query.ToList();
         }
-        // Supplier Ends Here
 
         // ------------------------------------------------------------------------------------
 
