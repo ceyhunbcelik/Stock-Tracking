@@ -867,6 +867,7 @@ namespace Stock_Tracking
             this.datagrid_worker.Name = "datagrid_worker";
             this.datagrid_worker.Size = new System.Drawing.Size(1022, 340);
             this.datagrid_worker.TabIndex = 13;
+            this.datagrid_worker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_worker_CellClick);
             // 
             // groupBox12
             // 
@@ -910,6 +911,7 @@ namespace Stock_Tracking
             this.tb_worker_like_name_surname.Name = "tb_worker_like_name_surname";
             this.tb_worker_like_name_surname.Size = new System.Drawing.Size(302, 24);
             this.tb_worker_like_name_surname.TabIndex = 2;
+            this.tb_worker_like_name_surname.TextChanged += new System.EventHandler(this.tb_worker_like_name_surname_TextChanged);
             // 
             // tb_worker_like_identification
             // 
@@ -918,6 +920,7 @@ namespace Stock_Tracking
             this.tb_worker_like_identification.Name = "tb_worker_like_identification";
             this.tb_worker_like_identification.Size = new System.Drawing.Size(302, 24);
             this.tb_worker_like_identification.TabIndex = 1;
+            this.tb_worker_like_identification.TextChanged += new System.EventHandler(this.tb_worker_like_identification_TextChanged);
             // 
             // groupBox13
             // 
@@ -947,6 +950,7 @@ namespace Stock_Tracking
             this.btn_worker_image.Size = new System.Drawing.Size(80, 70);
             this.btn_worker_image.TabIndex = 12;
             this.btn_worker_image.UseVisualStyleBackColor = true;
+            this.btn_worker_image.Click += new System.EventHandler(this.btn_worker_image_Click);
             // 
             // btn_worker_clear
             // 
@@ -960,6 +964,7 @@ namespace Stock_Tracking
             this.btn_worker_clear.Size = new System.Drawing.Size(80, 70);
             this.btn_worker_clear.TabIndex = 11;
             this.btn_worker_clear.UseVisualStyleBackColor = true;
+            this.btn_worker_clear.Click += new System.EventHandler(this.btn_worker_clear_Click);
             // 
             // btn_worker_insert
             // 

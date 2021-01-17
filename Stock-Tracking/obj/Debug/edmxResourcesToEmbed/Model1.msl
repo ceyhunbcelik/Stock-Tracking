@@ -54,6 +54,7 @@
     <EntitySetMapping Name="worker_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.worker_table">
         <MappingFragment StoreEntitySet="worker_table">
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="identification" ColumnName="identification" />
           <ScalarProperty Name="name_surname" ColumnName="name_surname" />

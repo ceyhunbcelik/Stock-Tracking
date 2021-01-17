@@ -72,6 +72,7 @@
     <Property Name="rank" Type="varchar" MaxLength="50" />
     <Property Name="phone" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="text" />
+    <Property Name="image" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityContainer Name="DB_Factory_StockModelStoreContainer">
     <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />

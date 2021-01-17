@@ -20,5 +20,6 @@ namespace Stock_Tracking
         public string rank { get; set; }
         public string phone { get; set; }
         public string address { get; set; }
+        public string image { get; set; }
     }
 }

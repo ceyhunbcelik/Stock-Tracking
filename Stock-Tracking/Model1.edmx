@@ -77,6 +77,7 @@
           <Property Name="rank" Type="varchar" MaxLength="50" />
           <Property Name="phone" Type="varchar" MaxLength="20" />
           <Property Name="address" Type="text" />
+          <Property Name="image" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityContainer Name="DB_Factory_StockModelStoreContainer">
           <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
@@ -147,6 +148,7 @@
           <Property Name="rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="DB_Factory_Stock" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="intake_table" EntityType="Self.intake_table" />
@@ -232,6 +234,7 @@
           <EntitySetMapping Name="worker_table">
             <EntityTypeMapping TypeName="DB_Factory_StockModel.worker_table">
               <MappingFragment StoreEntitySet="worker_table">
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="identification" ColumnName="identification" />
                 <ScalarProperty Name="name_surname" ColumnName="name_surname" />
