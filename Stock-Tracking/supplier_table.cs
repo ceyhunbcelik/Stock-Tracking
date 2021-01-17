@@ -21,5 +21,6 @@ namespace Stock_Tracking
         public string phone_1 { get; set; }
         public string phone_2 { get; set; }
         public string address { get; set; }
+        public string image { get; set; }
     }
 }

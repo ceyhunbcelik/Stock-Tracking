@@ -14,7 +14,10 @@ namespace Stock_Tracking
     public partial class Record : Form
     {
         DB_Factory_Stock db = new DB_Factory_Stock();
+
         public string target_folder_product = @"C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\img\product\";
+        public string target_folder_supplier = @"C:\Users\90541\Desktop\Stock-Tracking\Stock-Tracking\bin\img\supplier\";
+        public string file_name, file_source;
 
         public int AdminID;
 
@@ -47,9 +50,10 @@ namespace Stock_Tracking
                         };
             datagrid_product.DataSource = query.ToList();
         }
-        // Product - Clear Input
+        // Product - Clear Inputs
         private void tb_product_clear()
         {
+            productID = 0;
             tb_product_code.Text = "";
             tb_product_brand.Text = "";
             tb_product_model.Text = "";
@@ -59,7 +63,6 @@ namespace Stock_Tracking
         // Product - Fetch Selected Value in DataGrid
         private void datagrid_product_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             int GridID = e.RowIndex;
 
             DataGridViewRow selectedProduct = datagrid_product.Rows[GridID];
@@ -79,7 +82,6 @@ namespace Stock_Tracking
             picture_product.ImageLocation = target_folder_product + query.image.ToString();
         }
         // Product - Select Image
-        public string file_name, file_source;
         private void btn_product_image_Click(object sender, EventArgs e)
         {
             open_file_dialog.Title = "Lütfen Resim Seçiniz";
@@ -103,9 +105,9 @@ namespace Stock_Tracking
         private void btn_product_insert_Click(object sender, EventArgs e)
         {
             if (
-                tb_product_code.Text.Trim().Length == 0 &&
-                tb_product_brand.Text.Trim().Length == 0 &&
-                tb_product_model.Text.Trim().Length == 0 &&
+                tb_product_code.Text.Trim().Length == 0 ||
+                tb_product_brand.Text.Trim().Length == 0 ||
+                tb_product_model.Text.Trim().Length == 0 ||
                 tb_product_description.Text.Trim().Length == 0
             )
             {
@@ -179,7 +181,7 @@ namespace Stock_Tracking
                                  where item.id == productID
                                  select item).FirstOrDefault();
 
-                    if(picture_product.ImageLocation == target_folder_product + query.image.ToString())
+                    if (picture_product.ImageLocation == target_folder_product + query.image.ToString())
                     {
                         var update = db.product_table.Find(productID);
 
@@ -203,6 +205,7 @@ namespace Stock_Tracking
                             }
                             else
                             {
+                                File.Delete(target_folder_product + query.image.ToString());
 
                                 var update = db.product_table.Find(productID);
 
@@ -215,7 +218,6 @@ namespace Stock_Tracking
                                 db.SaveChanges();
 
                                 File.Copy(file_source, target_folder_product + file_name);
-                                File.Delete(target_folder_product + query.image.ToString());
 
                                 MessageBox.Show("Ürün Başarıyla Güncellenmiştir.");
                                 products();
@@ -239,8 +241,9 @@ namespace Stock_Tracking
 
                 db.product_table.Remove(delete);
 
-                db.SaveChanges();
                 File.Delete(target_folder_product + delete.image.ToString());
+
+                db.SaveChanges();
                 MessageBox.Show("Ürün Başarıyla Silinmiştir.");
                 products();
                 tb_product_clear();
@@ -300,18 +303,19 @@ namespace Stock_Tracking
 
             datagrid_supplier.DataSource = query.ToList();
         }
-
+        // Supplier - Clear Inputs
         private void tb_supplier_clear()
         {
-            productID = 0;
+            supplierID = 0;
             tb_supplier_company.Text = "";
             tb_supplier_person.Text = "";
             tb_supplier_rank.Text = "";
             tb_supplier_phone_1.Text = "";
             tb_supplier_phone_2.Text = "";
             tb_supplier_address.Text = "";
+            picture_supplier.ImageLocation = "";
         }
-
+        // Supplier - Fetch Selected Value in DataGrid
         private void datagrid_supplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int GridID = e.RowIndex;
@@ -330,53 +334,182 @@ namespace Stock_Tracking
                          select item).FirstOrDefault();
 
             tb_supplier_address.Text = query.address.ToString();
-        }
 
+            picture_supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture_supplier.ImageLocation = target_folder_supplier + query.image.ToString();
+        }
+        // Supplier - Select Image
+        private void btn_supplier_image_Click(object sender, EventArgs e)
+        {
+            open_file_dialog.Title = "Lütfen Resim Seçiniz";
+            open_file_dialog.FileName = "";
+
+            if (open_file_dialog.ShowDialog() == DialogResult.OK)
+            {
+                file_name = open_file_dialog.SafeFileName.ToString();
+                file_source = open_file_dialog.FileName.ToString();
+
+                picture_supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture_supplier.ImageLocation = open_file_dialog.FileName;
+            }
+            else
+            {
+                MessageBox.Show("Resim Seçmediniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        // Supplier - Save Supplier
         private void btn_supplier_insert_Click(object sender, EventArgs e)
         {
-            supplier_table supplier = new supplier_table
+            if (
+                tb_supplier_company.Text.Trim().Length == 0 ||
+                tb_supplier_person.Text.Trim().Length == 0 ||
+                tb_supplier_rank.Text.Trim().Length == 0 ||
+                tb_supplier_phone_1.Text.Trim().Length == 0 ||
+                tb_supplier_phone_2.Text.Trim().Length == 0 ||
+                tb_supplier_address.Text.Trim().Length == 0
+            )
             {
-                company = tb_supplier_company.Text,
-                person = tb_supplier_person.Text,
-                rank = tb_supplier_rank.Text,
-                phone_1 = tb_supplier_phone_1.Text,
-                phone_2 = tb_supplier_phone_2.Text,
-                address = tb_supplier_address.Text
-            };
+                MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (file_source != null)
+                {
+                    if (File.Exists(target_folder_supplier + file_name))
+                    {
+                        MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                    }
+                    else
+                    {
+                        supplier_table supplier = new supplier_table
+                        {
+                            company = tb_supplier_company.Text,
+                            person = tb_supplier_person.Text,
+                            rank = tb_supplier_rank.Text,
+                            phone_1 = tb_supplier_phone_1.Text,
+                            phone_2 = tb_supplier_phone_2.Text,
+                            address = tb_supplier_address.Text,
+                            image = file_name
+                        };
 
-            db.supplier_table.Add(supplier);
-            db.SaveChanges();
-            MessageBox.Show("Tedarikçi Başarıyla Kaydedilmiştir.");
-            suppliers();
-            tb_supplier_clear();
+                        File.Copy(file_source, target_folder_supplier + file_name);
+                        db.supplier_table.Add(supplier);
+                        db.SaveChanges();
+                        MessageBox.Show("Tedarikçi Başarıyla Kaydedilmiştir.");
+                        suppliers();
+                        tb_supplier_clear();
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Lütfen Görsel Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
-
+        // Supplier - Update Supplier
         private void btn_supplier_update_Click(object sender, EventArgs e)
         {
-            var update = db.supplier_table.Find(supplierID);
+            if (supplierID == 0)
+            {
+                MessageBox.Show("Lütfen Tedarikçiyi Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (
+                    tb_supplier_company.Text.Trim().Length == 0 ||
+                    tb_supplier_person.Text.Trim().Length == 0 ||
+                    tb_supplier_rank.Text.Trim().Length == 0 ||
+                    tb_supplier_phone_1.Text.Trim().Length == 0 ||
+                    tb_supplier_phone_2.Text.Trim().Length == 0 ||
+                    tb_supplier_address.Text.Trim().Length == 0
+                )
+                {
+                    MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    var query = (from item in db.supplier_table
+                                 where item.id == supplierID
+                                 select item).FirstOrDefault();
 
-            update.company = tb_supplier_company.Text;
-            update.person = tb_supplier_person.Text;
-            update.rank = tb_supplier_rank.Text;
-            update.phone_1 = tb_supplier_phone_1.Text;
-            update.phone_2 = tb_supplier_phone_2.Text;
-            update.address = tb_supplier_address.Text;
+                    if(picture_supplier.ImageLocation == target_folder_supplier + query.image.ToString())
+                    {
+                        var update = db.supplier_table.Find(supplierID);
 
-            db.SaveChanges();
-            MessageBox.Show("Tedarikçi Başarıyla Güncellenmiştir.");
-            suppliers();
-            tb_supplier_clear();
+                        update.company = tb_supplier_company.Text;
+                        update.person = tb_supplier_person.Text;
+                        update.rank = tb_supplier_rank.Text;
+                        update.phone_1 = tb_supplier_phone_1.Text;
+                        update.phone_2 = tb_supplier_phone_2.Text;
+                        update.address = tb_supplier_address.Text;
+
+                        db.SaveChanges();
+                        MessageBox.Show("Tedarikçi Başarıyla Güncellenmiştir.");
+                        suppliers();
+                        tb_supplier_clear();
+                    }
+                    else
+                    {
+                        if(file_source != "")
+                        {
+                            if(File.Exists(target_folder_supplier + file_name))
+                            {
+                                MessageBox.Show("Klasörde " + file_name + " isimli görsel mevcut");
+                            }
+                            else
+                            {
+                                File.Delete(target_folder_supplier + query.image.ToString());
+
+                                var update = db.supplier_table.Find(supplierID);
+
+                                update.company = tb_supplier_company.Text;
+                                update.person = tb_supplier_person.Text;
+                                update.rank = tb_supplier_rank.Text;
+                                update.phone_1 = tb_supplier_phone_1.Text;
+                                update.phone_2 = tb_supplier_phone_2.Text;
+                                update.address = tb_supplier_address.Text;
+                                update.image = file_name;
+
+                                File.Copy(file_source, target_folder_supplier + file_name);
+
+                                db.SaveChanges();
+
+                                MessageBox.Show("Tedarikçi Başarıyla Güncellenmiştir.");
+                                suppliers();
+                                tb_supplier_clear();
+                            }
+                        }
+                    }
+
+                }
+            }
         }
 
         private void btn_supplier_delete_Click(object sender, EventArgs e)
         {
-            var delete = db.supplier_table.Find(supplierID);
+            if(supplierID == 0)
+            {
+                MessageBox.Show("Lütfen Tedarikçiyi Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var delete = db.supplier_table.Find(supplierID);
 
-            db.supplier_table.Remove(delete);
+                db.supplier_table.Remove(delete);
 
-            db.SaveChanges();
-            MessageBox.Show("Tedarikçi Başarıyla Silinmiştir.");
-            suppliers();
+                File.Delete(target_folder_supplier + delete.image.ToString());
+
+                db.SaveChanges();
+                MessageBox.Show("Tedarikçi Başarıyla Silinmiştir.");
+                suppliers();
+                tb_supplier_clear();
+            }
+
+            
+        }
+        private void btn_supplier_clear_Click(object sender, EventArgs e)
+        {
             tb_supplier_clear();
         }
 
@@ -538,6 +671,8 @@ namespace Stock_Tracking
 
             datagrid_worker.DataSource = query.ToList();
         }
+
+
 
         private void Record_FormClosing(object sender, FormClosingEventArgs e)
         {

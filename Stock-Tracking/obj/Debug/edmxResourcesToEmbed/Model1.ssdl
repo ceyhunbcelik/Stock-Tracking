@@ -49,6 +49,7 @@
     <Property Name="phone_1" Type="varchar" MaxLength="20" />
     <Property Name="phone_2" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="text" />
+    <Property Name="image" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="supply_table">
     <Key>

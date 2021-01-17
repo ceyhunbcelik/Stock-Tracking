@@ -54,6 +54,7 @@
           <Property Name="phone_1" Type="varchar" MaxLength="20" />
           <Property Name="phone_2" Type="varchar" MaxLength="20" />
           <Property Name="address" Type="text" />
+          <Property Name="image" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="supply_table">
           <Key>
@@ -123,6 +124,7 @@
           <Property Name="phone_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="phone_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="supply_table">
           <Key>
@@ -204,6 +206,7 @@
           <EntitySetMapping Name="supplier_table">
             <EntityTypeMapping TypeName="DB_Factory_StockModel.supplier_table">
               <MappingFragment StoreEntitySet="supplier_table">
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="company" ColumnName="company" />
                 <ScalarProperty Name="person" ColumnName="person" />

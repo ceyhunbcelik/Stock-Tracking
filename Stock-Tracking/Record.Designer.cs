@@ -208,7 +208,7 @@ namespace Stock_Tracking
             this.tb_product_description.Multiline = true;
             this.tb_product_description.Name = "tb_product_description";
             this.tb_product_description.Size = new System.Drawing.Size(190, 136);
-            this.tb_product_description.TabIndex = 52;
+            this.tb_product_description.TabIndex = 6;
             // 
             // label3
             // 
@@ -227,7 +227,7 @@ namespace Stock_Tracking
             this.tb_product_model.Location = new System.Drawing.Point(117, 77);
             this.tb_product_model.Name = "tb_product_model";
             this.tb_product_model.Size = new System.Drawing.Size(190, 24);
-            this.tb_product_model.TabIndex = 50;
+            this.tb_product_model.TabIndex = 5;
             // 
             // label2
             // 
@@ -245,7 +245,7 @@ namespace Stock_Tracking
             this.tb_product_brand.Location = new System.Drawing.Point(117, 47);
             this.tb_product_brand.Name = "tb_product_brand";
             this.tb_product_brand.Size = new System.Drawing.Size(190, 24);
-            this.tb_product_brand.TabIndex = 48;
+            this.tb_product_brand.TabIndex = 4;
             // 
             // label1
             // 
@@ -264,7 +264,7 @@ namespace Stock_Tracking
             this.tb_product_code.Location = new System.Drawing.Point(117, 17);
             this.tb_product_code.Name = "tb_product_code";
             this.tb_product_code.Size = new System.Drawing.Size(190, 24);
-            this.tb_product_code.TabIndex = 46;
+            this.tb_product_code.TabIndex = 3;
             // 
             // label23
             // 
@@ -296,7 +296,7 @@ namespace Stock_Tracking
             this.datagrid_product.Location = new System.Drawing.Point(6, 10);
             this.datagrid_product.Name = "datagrid_product";
             this.datagrid_product.Size = new System.Drawing.Size(1022, 339);
-            this.datagrid_product.TabIndex = 42;
+            this.datagrid_product.TabIndex = 12;
             this.datagrid_product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_product_CellClick);
             // 
             // groupBox9
@@ -345,7 +345,7 @@ namespace Stock_Tracking
             this.btn_product_image.Location = new System.Drawing.Point(391, 19);
             this.btn_product_image.Name = "btn_product_image";
             this.btn_product_image.Size = new System.Drawing.Size(80, 70);
-            this.btn_product_image.TabIndex = 65;
+            this.btn_product_image.TabIndex = 11;
             this.btn_product_image.UseVisualStyleBackColor = true;
             this.btn_product_image.Click += new System.EventHandler(this.btn_product_image_Click);
             // 
@@ -359,7 +359,7 @@ namespace Stock_Tracking
             this.btn_product_clear.Location = new System.Drawing.Point(305, 19);
             this.btn_product_clear.Name = "btn_product_clear";
             this.btn_product_clear.Size = new System.Drawing.Size(80, 70);
-            this.btn_product_clear.TabIndex = 64;
+            this.btn_product_clear.TabIndex = 10;
             this.btn_product_clear.UseVisualStyleBackColor = true;
             this.btn_product_clear.Click += new System.EventHandler(this.btn_product_clear_Click);
             // 
@@ -373,7 +373,7 @@ namespace Stock_Tracking
             this.btn_product_delete.Location = new System.Drawing.Point(119, 19);
             this.btn_product_delete.Name = "btn_product_delete";
             this.btn_product_delete.Size = new System.Drawing.Size(80, 70);
-            this.btn_product_delete.TabIndex = 63;
+            this.btn_product_delete.TabIndex = 8;
             this.btn_product_delete.UseVisualStyleBackColor = true;
             this.btn_product_delete.Click += new System.EventHandler(this.btn_product_delete_Click);
             // 
@@ -387,7 +387,7 @@ namespace Stock_Tracking
             this.btn_product_insert.Location = new System.Drawing.Point(7, 19);
             this.btn_product_insert.Name = "btn_product_insert";
             this.btn_product_insert.Size = new System.Drawing.Size(80, 70);
-            this.btn_product_insert.TabIndex = 61;
+            this.btn_product_insert.TabIndex = 7;
             this.btn_product_insert.UseVisualStyleBackColor = true;
             this.btn_product_insert.Click += new System.EventHandler(this.btn_product_insert_Click);
             // 
@@ -401,7 +401,7 @@ namespace Stock_Tracking
             this.btn_product_update.Location = new System.Drawing.Point(205, 19);
             this.btn_product_update.Name = "btn_product_update";
             this.btn_product_update.Size = new System.Drawing.Size(80, 70);
-            this.btn_product_update.TabIndex = 62;
+            this.btn_product_update.TabIndex = 9;
             this.btn_product_update.UseVisualStyleBackColor = true;
             this.btn_product_update.Click += new System.EventHandler(this.btn_product_update_Click);
             // 
@@ -426,7 +426,7 @@ namespace Stock_Tracking
             this.tb_product_like_model.Location = new System.Drawing.Point(174, 62);
             this.tb_product_like_model.Name = "tb_product_like_model";
             this.tb_product_like_model.Size = new System.Drawing.Size(302, 24);
-            this.tb_product_like_model.TabIndex = 60;
+            this.tb_product_like_model.TabIndex = 2;
             this.tb_product_like_model.TextChanged += new System.EventHandler(this.tb_product_like_model_TextChanged);
             // 
             // tb_product_like_code
@@ -435,7 +435,7 @@ namespace Stock_Tracking
             this.tb_product_like_code.Location = new System.Drawing.Point(174, 21);
             this.tb_product_like_code.Name = "tb_product_like_code";
             this.tb_product_like_code.Size = new System.Drawing.Size(302, 24);
-            this.tb_product_like_code.TabIndex = 56;
+            this.tb_product_like_code.TabIndex = 1;
             this.tb_product_like_code.TextChanged += new System.EventHandler(this.tb_product_like_code_TextChanged);
             // 
             // label6
@@ -506,7 +506,8 @@ namespace Stock_Tracking
             this.datagrid_supplier.Location = new System.Drawing.Point(6, 10);
             this.datagrid_supplier.Name = "datagrid_supplier";
             this.datagrid_supplier.Size = new System.Drawing.Size(1022, 340);
-            this.datagrid_supplier.TabIndex = 25;
+            this.datagrid_supplier.TabIndex = 14;
+            this.datagrid_supplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_supplier_CellClick);
             // 
             // groupBox1
             // 
@@ -530,7 +531,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_company.Location = new System.Drawing.Point(174, 21);
             this.tb_supplier_like_company.Name = "tb_supplier_like_company";
             this.tb_supplier_like_company.Size = new System.Drawing.Size(302, 24);
-            this.tb_supplier_like_company.TabIndex = 26;
+            this.tb_supplier_like_company.TabIndex = 1;
             this.tb_supplier_like_company.TextChanged += new System.EventHandler(this.tb_supplier_like_company_TextChanged);
             // 
             // label14
@@ -562,7 +563,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_person.Location = new System.Drawing.Point(174, 62);
             this.tb_supplier_like_person.Name = "tb_supplier_like_person";
             this.tb_supplier_like_person.Size = new System.Drawing.Size(302, 24);
-            this.tb_supplier_like_person.TabIndex = 28;
+            this.tb_supplier_like_person.TabIndex = 2;
             this.tb_supplier_like_person.TextChanged += new System.EventHandler(this.tb_supplier_like_person_TextChanged);
             // 
             // groupBox5
@@ -591,8 +592,9 @@ namespace Stock_Tracking
             this.btn_supplier_image.Location = new System.Drawing.Point(391, 19);
             this.btn_supplier_image.Name = "btn_supplier_image";
             this.btn_supplier_image.Size = new System.Drawing.Size(80, 70);
-            this.btn_supplier_image.TabIndex = 66;
+            this.btn_supplier_image.TabIndex = 13;
             this.btn_supplier_image.UseVisualStyleBackColor = true;
+            this.btn_supplier_image.Click += new System.EventHandler(this.btn_supplier_image_Click);
             // 
             // btn_supplier_clear
             // 
@@ -604,8 +606,9 @@ namespace Stock_Tracking
             this.btn_supplier_clear.Location = new System.Drawing.Point(305, 19);
             this.btn_supplier_clear.Name = "btn_supplier_clear";
             this.btn_supplier_clear.Size = new System.Drawing.Size(80, 70);
-            this.btn_supplier_clear.TabIndex = 42;
+            this.btn_supplier_clear.TabIndex = 12;
             this.btn_supplier_clear.UseVisualStyleBackColor = true;
+            this.btn_supplier_clear.Click += new System.EventHandler(this.btn_supplier_clear_Click);
             // 
             // btn_supplier_insert
             // 
@@ -619,8 +622,9 @@ namespace Stock_Tracking
             this.btn_supplier_insert.Location = new System.Drawing.Point(7, 19);
             this.btn_supplier_insert.Name = "btn_supplier_insert";
             this.btn_supplier_insert.Size = new System.Drawing.Size(80, 70);
-            this.btn_supplier_insert.TabIndex = 34;
+            this.btn_supplier_insert.TabIndex = 9;
             this.btn_supplier_insert.UseVisualStyleBackColor = false;
+            this.btn_supplier_insert.Click += new System.EventHandler(this.btn_supplier_insert_Click);
             // 
             // btn_supplier_delete
             // 
@@ -632,8 +636,9 @@ namespace Stock_Tracking
             this.btn_supplier_delete.Location = new System.Drawing.Point(119, 19);
             this.btn_supplier_delete.Name = "btn_supplier_delete";
             this.btn_supplier_delete.Size = new System.Drawing.Size(80, 70);
-            this.btn_supplier_delete.TabIndex = 36;
+            this.btn_supplier_delete.TabIndex = 10;
             this.btn_supplier_delete.UseVisualStyleBackColor = true;
+            this.btn_supplier_delete.Click += new System.EventHandler(this.btn_supplier_delete_Click);
             // 
             // btn_supplier_update
             // 
@@ -645,8 +650,9 @@ namespace Stock_Tracking
             this.btn_supplier_update.Location = new System.Drawing.Point(205, 19);
             this.btn_supplier_update.Name = "btn_supplier_update";
             this.btn_supplier_update.Size = new System.Drawing.Size(80, 70);
-            this.btn_supplier_update.TabIndex = 35;
+            this.btn_supplier_update.TabIndex = 11;
             this.btn_supplier_update.UseVisualStyleBackColor = true;
+            this.btn_supplier_update.Click += new System.EventHandler(this.btn_supplier_update_Click);
             // 
             // groupBox4
             // 
@@ -721,7 +727,7 @@ namespace Stock_Tracking
             this.tb_supplier_phone_2.Mask = "(999) 000-0000";
             this.tb_supplier_phone_2.Name = "tb_supplier_phone_2";
             this.tb_supplier_phone_2.Size = new System.Drawing.Size(200, 24);
-            this.tb_supplier_phone_2.TabIndex = 43;
+            this.tb_supplier_phone_2.TabIndex = 7;
             // 
             // tb_supplier_phone_1
             // 
@@ -731,7 +737,7 @@ namespace Stock_Tracking
             this.tb_supplier_phone_1.Mask = "(999) 000-0000";
             this.tb_supplier_phone_1.Name = "tb_supplier_phone_1";
             this.tb_supplier_phone_1.Size = new System.Drawing.Size(200, 24);
-            this.tb_supplier_phone_1.TabIndex = 42;
+            this.tb_supplier_phone_1.TabIndex = 6;
             // 
             // tb_supplier_address
             // 
@@ -741,7 +747,7 @@ namespace Stock_Tracking
             this.tb_supplier_address.Multiline = true;
             this.tb_supplier_address.Name = "tb_supplier_address";
             this.tb_supplier_address.Size = new System.Drawing.Size(200, 76);
-            this.tb_supplier_address.TabIndex = 41;
+            this.tb_supplier_address.TabIndex = 8;
             // 
             // label7
             // 
@@ -761,7 +767,7 @@ namespace Stock_Tracking
             this.tb_supplier_rank.Location = new System.Drawing.Point(107, 77);
             this.tb_supplier_rank.Name = "tb_supplier_rank";
             this.tb_supplier_rank.Size = new System.Drawing.Size(200, 24);
-            this.tb_supplier_rank.TabIndex = 39;
+            this.tb_supplier_rank.TabIndex = 5;
             // 
             // label8
             // 
@@ -781,7 +787,7 @@ namespace Stock_Tracking
             this.tb_supplier_person.Location = new System.Drawing.Point(107, 47);
             this.tb_supplier_person.Name = "tb_supplier_person";
             this.tb_supplier_person.Size = new System.Drawing.Size(200, 24);
-            this.tb_supplier_person.TabIndex = 37;
+            this.tb_supplier_person.TabIndex = 4;
             // 
             // label9
             // 
@@ -801,7 +807,7 @@ namespace Stock_Tracking
             this.tb_supplier_company.Location = new System.Drawing.Point(107, 17);
             this.tb_supplier_company.Name = "tb_supplier_company";
             this.tb_supplier_company.Size = new System.Drawing.Size(200, 24);
-            this.tb_supplier_company.TabIndex = 35;
+            this.tb_supplier_company.TabIndex = 3;
             // 
             // label10
             // 
@@ -860,7 +866,7 @@ namespace Stock_Tracking
             this.datagrid_worker.Location = new System.Drawing.Point(6, 10);
             this.datagrid_worker.Name = "datagrid_worker";
             this.datagrid_worker.Size = new System.Drawing.Size(1022, 340);
-            this.datagrid_worker.TabIndex = 63;
+            this.datagrid_worker.TabIndex = 13;
             // 
             // groupBox12
             // 
@@ -903,7 +909,7 @@ namespace Stock_Tracking
             this.tb_worker_like_name_surname.Location = new System.Drawing.Point(174, 62);
             this.tb_worker_like_name_surname.Name = "tb_worker_like_name_surname";
             this.tb_worker_like_name_surname.Size = new System.Drawing.Size(302, 24);
-            this.tb_worker_like_name_surname.TabIndex = 67;
+            this.tb_worker_like_name_surname.TabIndex = 2;
             // 
             // tb_worker_like_identification
             // 
@@ -911,7 +917,7 @@ namespace Stock_Tracking
             this.tb_worker_like_identification.Location = new System.Drawing.Point(174, 21);
             this.tb_worker_like_identification.Name = "tb_worker_like_identification";
             this.tb_worker_like_identification.Size = new System.Drawing.Size(302, 24);
-            this.tb_worker_like_identification.TabIndex = 65;
+            this.tb_worker_like_identification.TabIndex = 1;
             // 
             // groupBox13
             // 
@@ -939,7 +945,7 @@ namespace Stock_Tracking
             this.btn_worker_image.Location = new System.Drawing.Point(391, 19);
             this.btn_worker_image.Name = "btn_worker_image";
             this.btn_worker_image.Size = new System.Drawing.Size(80, 70);
-            this.btn_worker_image.TabIndex = 66;
+            this.btn_worker_image.TabIndex = 12;
             this.btn_worker_image.UseVisualStyleBackColor = true;
             // 
             // btn_worker_clear
@@ -952,7 +958,7 @@ namespace Stock_Tracking
             this.btn_worker_clear.Location = new System.Drawing.Point(305, 19);
             this.btn_worker_clear.Name = "btn_worker_clear";
             this.btn_worker_clear.Size = new System.Drawing.Size(80, 70);
-            this.btn_worker_clear.TabIndex = 42;
+            this.btn_worker_clear.TabIndex = 11;
             this.btn_worker_clear.UseVisualStyleBackColor = true;
             // 
             // btn_worker_insert
@@ -967,7 +973,7 @@ namespace Stock_Tracking
             this.btn_worker_insert.Location = new System.Drawing.Point(7, 19);
             this.btn_worker_insert.Name = "btn_worker_insert";
             this.btn_worker_insert.Size = new System.Drawing.Size(80, 70);
-            this.btn_worker_insert.TabIndex = 34;
+            this.btn_worker_insert.TabIndex = 8;
             this.btn_worker_insert.UseVisualStyleBackColor = false;
             this.btn_worker_insert.Click += new System.EventHandler(this.btn_worker_insert_Click);
             // 
@@ -981,7 +987,7 @@ namespace Stock_Tracking
             this.btn_worker_delete.Location = new System.Drawing.Point(119, 19);
             this.btn_worker_delete.Name = "btn_worker_delete";
             this.btn_worker_delete.Size = new System.Drawing.Size(80, 70);
-            this.btn_worker_delete.TabIndex = 36;
+            this.btn_worker_delete.TabIndex = 9;
             this.btn_worker_delete.UseVisualStyleBackColor = true;
             this.btn_worker_delete.Click += new System.EventHandler(this.btn_worker_delete_Click);
             // 
@@ -995,7 +1001,7 @@ namespace Stock_Tracking
             this.btn_worker_update.Location = new System.Drawing.Point(205, 19);
             this.btn_worker_update.Name = "btn_worker_update";
             this.btn_worker_update.Size = new System.Drawing.Size(80, 70);
-            this.btn_worker_update.TabIndex = 35;
+            this.btn_worker_update.TabIndex = 10;
             this.btn_worker_update.UseVisualStyleBackColor = true;
             this.btn_worker_update.Click += new System.EventHandler(this.btn_worker_update_Click);
             // 
@@ -1057,7 +1063,7 @@ namespace Stock_Tracking
             this.tb_worker_address.Multiline = true;
             this.tb_worker_address.Name = "tb_worker_address";
             this.tb_worker_address.Size = new System.Drawing.Size(184, 106);
-            this.tb_worker_address.TabIndex = 75;
+            this.tb_worker_address.TabIndex = 7;
             // 
             // tb_worker_phone
             // 
@@ -1066,7 +1072,7 @@ namespace Stock_Tracking
             this.tb_worker_phone.Mask = "(999) 000-0000";
             this.tb_worker_phone.Name = "tb_worker_phone";
             this.tb_worker_phone.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_phone.TabIndex = 74;
+            this.tb_worker_phone.TabIndex = 6;
             // 
             // label18
             // 
@@ -1084,7 +1090,7 @@ namespace Stock_Tracking
             this.tb_worker_rank.Location = new System.Drawing.Point(123, 77);
             this.tb_worker_rank.Name = "tb_worker_rank";
             this.tb_worker_rank.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_rank.TabIndex = 72;
+            this.tb_worker_rank.TabIndex = 5;
             // 
             // label22
             // 
@@ -1112,7 +1118,7 @@ namespace Stock_Tracking
             this.tb_worker_name_surname.Location = new System.Drawing.Point(123, 47);
             this.tb_worker_name_surname.Name = "tb_worker_name_surname";
             this.tb_worker_name_surname.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_name_surname.TabIndex = 69;
+            this.tb_worker_name_surname.TabIndex = 4;
             // 
             // tb_worker_identification
             // 
@@ -1121,7 +1127,7 @@ namespace Stock_Tracking
             this.tb_worker_identification.Mask = "00000000000";
             this.tb_worker_identification.Name = "tb_worker_identification";
             this.tb_worker_identification.Size = new System.Drawing.Size(184, 24);
-            this.tb_worker_identification.TabIndex = 68;
+            this.tb_worker_identification.TabIndex = 3;
             // 
             // label30
             // 

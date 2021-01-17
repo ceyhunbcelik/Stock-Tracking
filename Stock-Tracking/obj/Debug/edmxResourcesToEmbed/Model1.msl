@@ -28,6 +28,7 @@
     <EntitySetMapping Name="supplier_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.supplier_table">
         <MappingFragment StoreEntitySet="supplier_table">
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="company" ColumnName="company" />
           <ScalarProperty Name="person" ColumnName="person" />
