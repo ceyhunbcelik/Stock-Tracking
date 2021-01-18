@@ -250,6 +250,15 @@ namespace Stock_Tracking
 
                 db.SaveChanges();
                 MessageBox.Show("Ürün Başarıyla Silinmiştir.");
+
+                // Stock
+                var delete_stock = db.stock_table.Find(productID);
+
+                db.stock_table.Remove(delete_stock);
+
+                db.SaveChanges();
+                // Stock
+
                 products();
                 tb_product_clear();
             }

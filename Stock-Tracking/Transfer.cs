@@ -22,7 +22,12 @@ namespace Stock_Tracking
         {
             //label1.Text = AdminID.ToString();
         }
+        // Supply - Save Supply
+        private void btn_supply_insert_Click(object sender, EventArgs e)
+        {
 
+        }
+        // Close Form and Redirect to Router
         private void Transfer_FormClosing(object sender, FormClosingEventArgs e)
         {
             Router router = new Router
