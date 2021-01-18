@@ -577,6 +577,7 @@ namespace Stock_Tracking
         // Worker - Clear Inputs
         private void tb_worker_clear()
         {
+            workerID = 0;
             tb_worker_identification.Text = "";
             tb_worker_name_surname.Text = "";
             tb_worker_rank.Text = "";

@@ -41,9 +41,10 @@ namespace Stock_Tracking
 
                 if (query != null)
                 {
+
                     Router router = new Router
                     {
-                        AdminID = query.id
+                        AdminID = (int)query.worker_id
                     };
 
                     this.Hide();
