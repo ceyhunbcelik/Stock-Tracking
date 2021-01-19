@@ -54,7 +54,6 @@ namespace Stock_Tracking
             this.btn_supply_clear = new System.Windows.Forms.Button();
             this.btn_supply_delete = new System.Windows.Forms.Button();
             this.btn_supply_insert = new System.Windows.Forms.Button();
-            this.btn_supply_update = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.picture_supply_admin = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -85,6 +84,7 @@ namespace Stock_Tracking
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.picture_intake_admin = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_supply_update = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -184,6 +184,7 @@ namespace Stock_Tracking
             this.tb_supply_like_company.Name = "tb_supply_like_company";
             this.tb_supply_like_company.Size = new System.Drawing.Size(163, 24);
             this.tb_supply_like_company.TabIndex = 59;
+            this.tb_supply_like_company.TextChanged += new System.EventHandler(this.tb_supply_like_company_TextChanged);
             // 
             // label11
             // 
@@ -203,6 +204,7 @@ namespace Stock_Tracking
             this.tb_supply_like_code.Name = "tb_supply_like_code";
             this.tb_supply_like_code.Size = new System.Drawing.Size(163, 24);
             this.tb_supply_like_code.TabIndex = 1;
+            this.tb_supply_like_code.TextChanged += new System.EventHandler(this.tb_supply_like_code_TextChanged);
             // 
             // label5
             // 
@@ -333,10 +335,10 @@ namespace Stock_Tracking
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.btn_supply_update);
             this.groupBox8.Controls.Add(this.btn_supply_clear);
             this.groupBox8.Controls.Add(this.btn_supply_delete);
             this.groupBox8.Controls.Add(this.btn_supply_insert);
-            this.groupBox8.Controls.Add(this.btn_supply_update);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox8.ForeColor = System.Drawing.Color.White;
             this.groupBox8.Location = new System.Drawing.Point(8, 225);
@@ -358,6 +360,7 @@ namespace Stock_Tracking
             this.btn_supply_clear.Size = new System.Drawing.Size(70, 70);
             this.btn_supply_clear.TabIndex = 10;
             this.btn_supply_clear.UseVisualStyleBackColor = true;
+            this.btn_supply_clear.Click += new System.EventHandler(this.btn_supply_clear_Click);
             // 
             // btn_supply_delete
             // 
@@ -371,6 +374,7 @@ namespace Stock_Tracking
             this.btn_supply_delete.Size = new System.Drawing.Size(70, 70);
             this.btn_supply_delete.TabIndex = 8;
             this.btn_supply_delete.UseVisualStyleBackColor = true;
+            this.btn_supply_delete.Click += new System.EventHandler(this.btn_supply_delete_Click);
             // 
             // btn_supply_insert
             // 
@@ -385,20 +389,6 @@ namespace Stock_Tracking
             this.btn_supply_insert.TabIndex = 7;
             this.btn_supply_insert.UseVisualStyleBackColor = true;
             this.btn_supply_insert.Click += new System.EventHandler(this.btn_supply_insert_Click);
-            // 
-            // btn_supply_update
-            // 
-            this.btn_supply_update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_supply_update.BackgroundImage")));
-            this.btn_supply_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_supply_update.FlatAppearance.BorderSize = 0;
-            this.btn_supply_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_supply_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_supply_update.Location = new System.Drawing.Point(170, 19);
-            this.btn_supply_update.Name = "btn_supply_update";
-            this.btn_supply_update.Size = new System.Drawing.Size(70, 70);
-            this.btn_supply_update.TabIndex = 9;
-            this.btn_supply_update.UseVisualStyleBackColor = true;
-            this.btn_supply_update.Click += new System.EventHandler(this.btn_supply_update_Click);
             // 
             // groupBox17
             // 
@@ -469,6 +459,7 @@ namespace Stock_Tracking
             this.datagrid_intake.Name = "datagrid_intake";
             this.datagrid_intake.Size = new System.Drawing.Size(1258, 297);
             this.datagrid_intake.TabIndex = 12;
+            this.datagrid_intake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_intake_CellClick);
             // 
             // groupBox5
             // 
@@ -737,6 +728,20 @@ namespace Stock_Tracking
             this.label9.TabIndex = 76;
             this.label9.Text = "ÇALIŞANLAR";
             // 
+            // btn_supply_update
+            // 
+            this.btn_supply_update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_supply_update.BackgroundImage")));
+            this.btn_supply_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_supply_update.FlatAppearance.BorderSize = 0;
+            this.btn_supply_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_supply_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_supply_update.Location = new System.Drawing.Point(170, 19);
+            this.btn_supply_update.Name = "btn_supply_update";
+            this.btn_supply_update.Size = new System.Drawing.Size(70, 70);
+            this.btn_supply_update.TabIndex = 11;
+            this.btn_supply_update.UseVisualStyleBackColor = true;
+            this.btn_supply_update.Click += new System.EventHandler(this.btn_supply_update_Click);
+            // 
             // Transfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -804,7 +809,6 @@ namespace Stock_Tracking
         private System.Windows.Forms.Button btn_supply_clear;
         private System.Windows.Forms.Button btn_supply_delete;
         private System.Windows.Forms.Button btn_supply_insert;
-        private System.Windows.Forms.Button btn_supply_update;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView datagrid_supply;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -840,5 +844,6 @@ namespace Stock_Tracking
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.PictureBox picture_intake_admin;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_supply_update;
     }
 }
