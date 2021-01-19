@@ -32,34 +32,38 @@ namespace Stock_Tracking
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transfer));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.picture_supply_admin = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.datagrid_supply = new System.Windows.Forms.DataGridView();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tb_supply_like_company = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_supply_like_code = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.cb_supply_supplier = new System.Windows.Forms.ComboBox();
+            this.cb_supply_product = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_supply_amount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.picture_supply_supplier = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picture_supply_product = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btn_supply_clear = new System.Windows.Forms.Button();
             this.btn_supply_delete = new System.Windows.Forms.Button();
             this.btn_supply_insert = new System.Windows.Forms.Button();
             this.btn_supply_update = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.picture_supply_product = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.picture_supply_supplier = new System.Windows.Forms.PictureBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cb_supply_amount = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.tb_supply_like_code = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.datagrid_supply = new System.Windows.Forms.DataGridView();
-            this.cb_supply_product = new System.Windows.Forms.ComboBox();
-            this.cb_supply_supplier = new System.Windows.Forms.ComboBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.picture_supply_admin = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.datagrid_intake = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tb_intake_like_identification = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tb_intake_like_code = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -81,24 +85,20 @@ namespace Stock_Tracking
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.picture_intake_admin = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tb_intake_like_identification = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_supply_like_company = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_admin)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_product)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_supplier)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_supply)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_supplier)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_product)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_admin)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_intake)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -140,54 +140,196 @@ namespace Stock_Tracking
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ÜRÜN TEDARİK";
             // 
-            // label23
+            // groupBox2
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(10, 326);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(139, 20);
-            this.label23.TabIndex = 68;
-            this.label23.Text = "TEDARİKÇİLER";
+            this.groupBox2.BackColor = System.Drawing.Color.Black;
+            this.groupBox2.Controls.Add(this.datagrid_supply);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(8, 347);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1270, 317);
+            this.groupBox2.TabIndex = 75;
+            this.groupBox2.TabStop = false;
             // 
-            // tabPage3
+            // datagrid_supply
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Black;
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.groupBox5);
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Controls.Add(this.groupBox9);
-            this.tabPage3.Controls.Add(this.groupBox11);
-            this.tabPage3.Controls.Add(this.groupBox12);
-            this.tabPage3.Controls.Add(this.groupBox13);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1283, 671);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ÜRÜN ALIMI";
+            this.datagrid_supply.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_supply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_supply.Location = new System.Drawing.Point(6, 14);
+            this.datagrid_supply.Name = "datagrid_supply";
+            this.datagrid_supply.Size = new System.Drawing.Size(1258, 297);
+            this.datagrid_supply.TabIndex = 12;
+            this.datagrid_supply.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_supply_CellClick);
             // 
-            // groupBox17
+            // groupBox7
             // 
-            this.groupBox17.Controls.Add(this.picture_supply_admin);
-            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox17.ForeColor = System.Drawing.Color.White;
-            this.groupBox17.Location = new System.Drawing.Point(970, 6);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(308, 317);
-            this.groupBox17.TabIndex = 70;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "ADMİN GÖRSEL";
+            this.groupBox7.Controls.Add(this.tb_supply_like_company);
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Controls.Add(this.tb_supply_like_code);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            this.groupBox7.Location = new System.Drawing.Point(8, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(328, 94);
+            this.groupBox7.TabIndex = 74;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ARAMA";
             // 
-            // picture_supply_admin
+            // tb_supply_like_company
             // 
-            this.picture_supply_admin.Location = new System.Drawing.Point(6, 17);
-            this.picture_supply_admin.Name = "picture_supply_admin";
-            this.picture_supply_admin.Size = new System.Drawing.Size(295, 295);
-            this.picture_supply_admin.TabIndex = 67;
-            this.picture_supply_admin.TabStop = false;
+            this.tb_supply_like_company.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_supply_like_company.Location = new System.Drawing.Point(159, 53);
+            this.tb_supply_like_company.Name = "tb_supply_like_company";
+            this.tb_supply_like_company.Size = new System.Drawing.Size(163, 24);
+            this.tb_supply_like_company.TabIndex = 59;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(6, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 20);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "ŞİRKETE GÖRE:";
+            // 
+            // tb_supply_like_code
+            // 
+            this.tb_supply_like_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_supply_like_code.Location = new System.Drawing.Point(159, 23);
+            this.tb_supply_like_code.Name = "tb_supply_like_code";
+            this.tb_supply_like_code.Size = new System.Drawing.Size(163, 24);
+            this.tb_supply_like_code.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(33, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 20);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "KODA GÖRE:";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.cb_supply_supplier);
+            this.groupBox10.Controls.Add(this.cb_supply_product);
+            this.groupBox10.Controls.Add(this.label3);
+            this.groupBox10.Controls.Add(this.tb_supply_amount);
+            this.groupBox10.Controls.Add(this.label2);
+            this.groupBox10.Controls.Add(this.label1);
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox10.ForeColor = System.Drawing.Color.White;
+            this.groupBox10.Location = new System.Drawing.Point(8, 106);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(328, 113);
+            this.groupBox10.TabIndex = 73;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "BAŞLIKLAR";
+            // 
+            // cb_supply_supplier
+            // 
+            this.cb_supply_supplier.BackColor = System.Drawing.Color.White;
+            this.cb_supply_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cb_supply_supplier.FormattingEnabled = true;
+            this.cb_supply_supplier.Location = new System.Drawing.Point(117, 49);
+            this.cb_supply_supplier.Name = "cb_supply_supplier";
+            this.cb_supply_supplier.Size = new System.Drawing.Size(205, 26);
+            this.cb_supply_supplier.TabIndex = 70;
+            // 
+            // cb_supply_product
+            // 
+            this.cb_supply_product.BackColor = System.Drawing.Color.White;
+            this.cb_supply_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cb_supply_product.FormattingEnabled = true;
+            this.cb_supply_product.Location = new System.Drawing.Point(117, 17);
+            this.cb_supply_product.Name = "cb_supply_product";
+            this.cb_supply_product.Size = new System.Drawing.Size(205, 26);
+            this.cb_supply_product.TabIndex = 69;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(31, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "MİKTAR:";
+            // 
+            // tb_supply_amount
+            // 
+            this.tb_supply_amount.BackColor = System.Drawing.Color.White;
+            this.tb_supply_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_supply_amount.Location = new System.Drawing.Point(117, 81);
+            this.tb_supply_amount.Name = "tb_supply_amount";
+            this.tb_supply_amount.Size = new System.Drawing.Size(205, 24);
+            this.tb_supply_amount.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(2, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "TEDARİKÇİ:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(46, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "ÜRÜN:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.picture_supply_supplier);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(656, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(308, 317);
+            this.groupBox3.TabIndex = 72;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "TEDARİKÇİ GÖRSEL";
+            // 
+            // picture_supply_supplier
+            // 
+            this.picture_supply_supplier.Location = new System.Drawing.Point(6, 17);
+            this.picture_supply_supplier.Name = "picture_supply_supplier";
+            this.picture_supply_supplier.Size = new System.Drawing.Size(295, 295);
+            this.picture_supply_supplier.TabIndex = 67;
+            this.picture_supply_supplier.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.picture_supply_product);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(342, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 317);
+            this.groupBox1.TabIndex = 71;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ÜRÜN GÖRSEL";
+            // 
+            // picture_supply_product
+            // 
+            this.picture_supply_product.Location = new System.Drawing.Point(6, 17);
+            this.picture_supply_product.Name = "picture_supply_product";
+            this.picture_supply_product.Size = new System.Drawing.Size(295, 295);
+            this.picture_supply_product.TabIndex = 67;
+            this.picture_supply_product.TabStop = false;
             // 
             // groupBox8
             // 
@@ -256,177 +398,56 @@ namespace Stock_Tracking
             this.btn_supply_update.Size = new System.Drawing.Size(70, 70);
             this.btn_supply_update.TabIndex = 9;
             this.btn_supply_update.UseVisualStyleBackColor = true;
+            this.btn_supply_update.Click += new System.EventHandler(this.btn_supply_update_Click);
             // 
-            // groupBox1
+            // groupBox17
             // 
-            this.groupBox1.Controls.Add(this.picture_supply_product);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(342, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(308, 317);
-            this.groupBox1.TabIndex = 71;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ÜRÜN GÖRSEL";
+            this.groupBox17.Controls.Add(this.picture_supply_admin);
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox17.ForeColor = System.Drawing.Color.White;
+            this.groupBox17.Location = new System.Drawing.Point(970, 6);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(308, 317);
+            this.groupBox17.TabIndex = 70;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "ADMİN GÖRSEL";
             // 
-            // picture_supply_product
+            // picture_supply_admin
             // 
-            this.picture_supply_product.Location = new System.Drawing.Point(6, 17);
-            this.picture_supply_product.Name = "picture_supply_product";
-            this.picture_supply_product.Size = new System.Drawing.Size(295, 295);
-            this.picture_supply_product.TabIndex = 67;
-            this.picture_supply_product.TabStop = false;
+            this.picture_supply_admin.Location = new System.Drawing.Point(6, 17);
+            this.picture_supply_admin.Name = "picture_supply_admin";
+            this.picture_supply_admin.Size = new System.Drawing.Size(295, 295);
+            this.picture_supply_admin.TabIndex = 67;
+            this.picture_supply_admin.TabStop = false;
             // 
-            // groupBox3
+            // label23
             // 
-            this.groupBox3.Controls.Add(this.picture_supply_supplier);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(656, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(308, 317);
-            this.groupBox3.TabIndex = 72;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "TEDARİKÇİ GÖRSEL";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(10, 326);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(139, 20);
+            this.label23.TabIndex = 68;
+            this.label23.Text = "TEDARİKÇİLER";
             // 
-            // picture_supply_supplier
+            // tabPage3
             // 
-            this.picture_supply_supplier.Location = new System.Drawing.Point(6, 17);
-            this.picture_supply_supplier.Name = "picture_supply_supplier";
-            this.picture_supply_supplier.Size = new System.Drawing.Size(295, 295);
-            this.picture_supply_supplier.TabIndex = 67;
-            this.picture_supply_supplier.TabStop = false;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.cb_supply_supplier);
-            this.groupBox10.Controls.Add(this.cb_supply_product);
-            this.groupBox10.Controls.Add(this.label3);
-            this.groupBox10.Controls.Add(this.cb_supply_amount);
-            this.groupBox10.Controls.Add(this.label2);
-            this.groupBox10.Controls.Add(this.label1);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox10.ForeColor = System.Drawing.Color.White;
-            this.groupBox10.Location = new System.Drawing.Point(8, 106);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(328, 113);
-            this.groupBox10.TabIndex = 73;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "BAŞLIKLAR";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(31, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "MİKTAR:";
-            // 
-            // cb_supply_amount
-            // 
-            this.cb_supply_amount.BackColor = System.Drawing.Color.White;
-            this.cb_supply_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cb_supply_amount.Location = new System.Drawing.Point(117, 81);
-            this.cb_supply_amount.Name = "cb_supply_amount";
-            this.cb_supply_amount.Size = new System.Drawing.Size(205, 24);
-            this.cb_supply_amount.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(2, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "TEDARİKÇİ:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(46, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "ÜRÜN:";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.tb_supply_like_company);
-            this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Controls.Add(this.tb_supply_like_code);
-            this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(8, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(328, 94);
-            this.groupBox7.TabIndex = 74;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "ARAMA";
-            // 
-            // tb_supply_like_code
-            // 
-            this.tb_supply_like_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_supply_like_code.Location = new System.Drawing.Point(159, 23);
-            this.tb_supply_like_code.Name = "tb_supply_like_code";
-            this.tb_supply_like_code.Size = new System.Drawing.Size(163, 24);
-            this.tb_supply_like_code.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(33, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 20);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "KODA GÖRE:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Black;
-            this.groupBox2.Controls.Add(this.datagrid_supply);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(8, 347);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1270, 317);
-            this.groupBox2.TabIndex = 75;
-            this.groupBox2.TabStop = false;
-            // 
-            // datagrid_supply
-            // 
-            this.datagrid_supply.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagrid_supply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_supply.Location = new System.Drawing.Point(6, 14);
-            this.datagrid_supply.Name = "datagrid_supply";
-            this.datagrid_supply.Size = new System.Drawing.Size(1258, 297);
-            this.datagrid_supply.TabIndex = 12;
-            // 
-            // cb_supply_product
-            // 
-            this.cb_supply_product.BackColor = System.Drawing.Color.White;
-            this.cb_supply_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cb_supply_product.FormattingEnabled = true;
-            this.cb_supply_product.Location = new System.Drawing.Point(117, 17);
-            this.cb_supply_product.Name = "cb_supply_product";
-            this.cb_supply_product.Size = new System.Drawing.Size(205, 26);
-            this.cb_supply_product.TabIndex = 69;
-            // 
-            // cb_supply_supplier
-            // 
-            this.cb_supply_supplier.BackColor = System.Drawing.Color.White;
-            this.cb_supply_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cb_supply_supplier.FormattingEnabled = true;
-            this.cb_supply_supplier.Location = new System.Drawing.Point(117, 49);
-            this.cb_supply_supplier.Name = "cb_supply_supplier";
-            this.cb_supply_supplier.Size = new System.Drawing.Size(205, 26);
-            this.cb_supply_supplier.TabIndex = 70;
+            this.tabPage3.BackColor = System.Drawing.Color.Black;
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.groupBox11);
+            this.tabPage3.Controls.Add(this.groupBox12);
+            this.tabPage3.Controls.Add(this.groupBox13);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1283, 671);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "ÜRÜN ALIMI";
             // 
             // groupBox4
             // 
@@ -463,6 +484,25 @@ namespace Stock_Tracking
             this.groupBox5.TabIndex = 82;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ARAMA";
+            // 
+            // tb_intake_like_identification
+            // 
+            this.tb_intake_like_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tb_intake_like_identification.Location = new System.Drawing.Point(139, 53);
+            this.tb_intake_like_identification.Name = "tb_intake_like_identification";
+            this.tb_intake_like_identification.Size = new System.Drawing.Size(183, 24);
+            this.tb_intake_like_identification.TabIndex = 59;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(6, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 20);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "T.C YE GÖRE:";
             // 
             // tb_intake_like_code
             // 
@@ -697,44 +737,6 @@ namespace Stock_Tracking
             this.label9.TabIndex = 76;
             this.label9.Text = "ÇALIŞANLAR";
             // 
-            // tb_intake_like_identification
-            // 
-            this.tb_intake_like_identification.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_intake_like_identification.Location = new System.Drawing.Point(139, 53);
-            this.tb_intake_like_identification.Name = "tb_intake_like_identification";
-            this.tb_intake_like_identification.Size = new System.Drawing.Size(183, 24);
-            this.tb_intake_like_identification.TabIndex = 59;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(6, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 20);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "T.C YE GÖRE:";
-            // 
-            // tb_supply_like_company
-            // 
-            this.tb_supply_like_company.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tb_supply_like_company.Location = new System.Drawing.Point(159, 53);
-            this.tb_supply_like_company.Name = "tb_supply_like_company";
-            this.tb_supply_like_company.Size = new System.Drawing.Size(163, 24);
-            this.tb_supply_like_company.TabIndex = 59;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(6, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 20);
-            this.label11.TabIndex = 60;
-            this.label11.Text = "ŞİRKETE GÖRE:";
-            // 
             // Transfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,21 +752,21 @@ namespace Stock_Tracking
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_admin)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_product)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_supplier)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_supply)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_supplier)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_product)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picture_supply_admin)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_intake)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -791,7 +793,7 @@ namespace Stock_Tracking
         private System.Windows.Forms.PictureBox picture_supply_admin;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox cb_supply_amount;
+        private System.Windows.Forms.TextBox tb_supply_amount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;

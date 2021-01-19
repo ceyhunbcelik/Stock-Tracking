@@ -111,9 +111,6 @@
     <Compile Include="Router.Designer.cs">
       <DependentUpon>Router.cs</DependentUpon>
     </Compile>
-    <Compile Include="stock_table.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="supplier_table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

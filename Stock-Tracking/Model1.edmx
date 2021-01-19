@@ -36,13 +36,6 @@
           <Property Name="description" Type="text" />
           <Property Name="image" Type="varchar" MaxLength="150" />
         </EntityType>
-        <EntityType Name="stock_table">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="int" Nullable="false" />
-          <Property Name="amount" Type="int" />
-        </EntityType>
         <EntityType Name="supplier_table">
           <Key>
             <PropertyRef Name="id" />
@@ -83,7 +76,6 @@
           <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="intake_table" EntityType="Self.intake_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product_table" EntityType="Self.product_table" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="stock_table" EntityType="Self.stock_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="supplier_table" EntityType="Self.supplier_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="supply_table" EntityType="Self.supply_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="worker_table" EntityType="Self.worker_table" Schema="dbo" store:Type="Tables" />
@@ -156,16 +148,8 @@
           <EntitySet Name="supplier_table" EntityType="Self.supplier_table" />
           <EntitySet Name="supply_table" EntityType="Self.supply_table" />
           <EntitySet Name="worker_table" EntityType="Self.worker_table" />
-          <EntitySet Name="stock_table" EntityType="DB_Factory_StockModel.stock_table" />
           <EntitySet Name="admin_table" EntityType="DB_Factory_StockModel.admin_table" />
         </EntityContainer>
-        <EntityType Name="stock_table">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="Int32" Nullable="false" />
-          <Property Name="amount" Type="Int32" />
-        </EntityType>
         <EntityType Name="admin_table">
           <Key>
             <PropertyRef Name="id" />
@@ -241,14 +225,6 @@
                 <ScalarProperty Name="rank" ColumnName="rank" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="address" ColumnName="address" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="stock_table">
-            <EntityTypeMapping TypeName="DB_Factory_StockModel.stock_table">
-              <MappingFragment StoreEntitySet="stock_table">
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="product_id" ColumnName="product_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

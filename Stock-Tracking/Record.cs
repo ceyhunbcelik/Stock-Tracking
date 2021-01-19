@@ -22,7 +22,7 @@ namespace Stock_Tracking
 
         public int AdminID;
 
-        public int productID = 0;
+        public int productID;
         public int supplierID;
         public int workerID;
 
@@ -137,15 +137,6 @@ namespace Stock_Tracking
                         db.product_table.Add(product);
                         db.SaveChanges();
 
-                        stock_table stock = new stock_table
-                        {
-                            product_id = product.id,
-                            amount = 0
-                        };
-
-                        db.stock_table.Add(stock);
-                        db.SaveChanges();
-
                         MessageBox.Show("Ürün Başarıyla Kaydedilmiştir");
                         products();
                         tb_product_clear();
@@ -250,14 +241,6 @@ namespace Stock_Tracking
 
                 db.SaveChanges();
                 MessageBox.Show("Ürün Başarıyla Silinmiştir.");
-
-                // Stock
-                var delete_stock = db.stock_table.Find(productID);
-
-                db.stock_table.Remove(delete_stock);
-
-                db.SaveChanges();
-                // Stock
 
                 products();
                 tb_product_clear();

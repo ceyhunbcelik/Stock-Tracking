@@ -64,14 +64,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="stock_table">
-      <EntityTypeMapping TypeName="DB_Factory_StockModel.stock_table">
-        <MappingFragment StoreEntitySet="stock_table">
-          <ScalarProperty Name="amount" ColumnName="amount" />
-          <ScalarProperty Name="product_id" ColumnName="product_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="admin_table">
       <EntityTypeMapping TypeName="DB_Factory_StockModel.admin_table">
         <MappingFragment StoreEntitySet="admin_table">

@@ -76,6 +76,7 @@ namespace Stock_Tracking
             this.tb_admin_like_identification.Name = "tb_admin_like_identification";
             this.tb_admin_like_identification.Size = new System.Drawing.Size(252, 24);
             this.tb_admin_like_identification.TabIndex = 64;
+            this.tb_admin_like_identification.TextChanged += new System.EventHandler(this.tb_admin_like_identification_TextChanged);
             // 
             // tb_admin_password
             // 

@@ -60,7 +60,6 @@ namespace Stock_Tracking
         // Admin - Fetch Workers ID without Admin
         private void cb_admin_identification_list()
         {
-
             var query = from item_worker in db.worker_table
                         where !(from item_admin in db.admin_table
                                 select item_admin.worker_id).Contains(item_worker.id)
@@ -207,6 +206,25 @@ namespace Stock_Tracking
         private void btn_admin_clear_Click(object sender, EventArgs e)
         {
             tb_admin_clear();
+        }
+        // Admin - Search Admin by Identification
+        private void tb_admin_like_identification_TextChanged(object sender, EventArgs e)
+        {
+            var query = from item_admin in db.admin_table
+                        join item_worker in db.worker_table
+                        on item_admin.worker_id equals item_worker.id
+                        where item_worker.identification.Contains(tb_admin_like_identification.Text)
+                        select new
+                        {
+                            ID = item_admin.id,
+                            KULLANICI_ADI = item_admin.username,
+                            ŞİFRE = item_admin.password,
+                            AD_SOYAD = item_worker.name_surname,
+                            TC = item_worker.identification,
+                            GÖREV = item_worker.rank
+                        };
+
+            datagrid_admin.DataSource = query.ToList();
         }
         // Close Form and Redirect to Router
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
