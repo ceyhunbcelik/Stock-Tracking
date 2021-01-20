@@ -336,6 +336,7 @@ namespace Stock_Tracking
                             MARKA = item_product.brand,
                             MODEL = item_product.model,
                             ÇALIŞAN = item_worker.name_surname,
+                            ÇALIŞAN_TC = item_worker.identification,
                             GÖREV = item_worker.rank,
                             ADMIN = item_admin.name_surname,
                             ADMIN_TC = item_admin.identification,
@@ -360,38 +361,49 @@ namespace Stock_Tracking
         // Intake - Fetch Selected Value in DataGrid
         private void datagrid_intake_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int GridID = e.RowIndex;
+            try
+            {
+                int GridID = e.RowIndex;
 
-            DataGridViewRow selectedIntake = datagrid_intake.Rows[GridID];
+                DataGridViewRow selectedIntake = datagrid_intake.Rows[GridID];
 
-            intakeID = Convert.ToInt32(selectedIntake.Cells[0].Value.ToString());
+                intakeID = Convert.ToInt32(selectedIntake.Cells[0].Value.ToString());
 
-            var query_product = (from item_product in db.product_table
-                                 join item_intake in db.intake_table
-                                 on item_product.id equals item_intake.product_id
-                                 where item_intake.id == intakeID
-                                 select item_product).FirstOrDefault();
+                var query_product = (from item_product in db.product_table
+                                     join item_intake in db.intake_table
+                                     on item_product.id equals item_intake.product_id
+                                     where item_intake.id == intakeID
+                                     select item_product).FirstOrDefault();
 
-            var query_worker = (from item_worker in db.worker_table
-                                join item_intake in db.intake_table
-                                on item_worker.id equals item_intake.worker_id
-                                where item_intake.id == intakeID
-                                select item_worker).FirstOrDefault();
+                var query_worker = (from item_worker in db.worker_table
+                                    join item_intake in db.intake_table
+                                    on item_worker.id equals item_intake.worker_id
+                                    where item_intake.id == intakeID
+                                    select item_worker).FirstOrDefault();
 
-            var query_admin = (from item_worker in db.worker_table
-                                join item_intake in db.intake_table
-                                on item_worker.id equals item_intake.admin_id
-                                where item_intake.id == intakeID
-                                select item_worker).FirstOrDefault();
+                var query_admin = (from item_worker in db.worker_table
+                                   join item_intake in db.intake_table
+                                   on item_worker.id equals item_intake.admin_id
+                                   where item_intake.id == intakeID
+                                   select item_worker).FirstOrDefault();
 
-            picture_intake_product.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_intake_product.ImageLocation = target_folder_product + query_product.image.ToString();
+                picture_intake_product.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture_intake_product.ImageLocation = target_folder_product + query_product.image.ToString();
 
-            picture_intake_worker.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_intake_worker.ImageLocation = target_folder_worker + query_worker.image.ToString();
+                picture_intake_worker.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture_intake_worker.ImageLocation = target_folder_worker + query_worker.image.ToString();
 
-            picture_intake_admin.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_intake_admin.ImageLocation = target_folder_worker + query_admin.image.ToString();
+                picture_intake_admin.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture_intake_admin.ImageLocation = target_folder_worker + query_admin.image.ToString();
+
+                cb_intake_product.Text = selectedIntake.Cells[1].Value.ToString();
+                cb_intake_worker.Text = selectedIntake.Cells[5].Value.ToString();
+                tb_intake_amount.Text = selectedIntake.Cells[9].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Beklenmedik bir hata oluştu");
+            }
         }
         // Intake - ComboBox Fetch Products Code
         private void intake_products()
@@ -408,6 +420,274 @@ namespace Stock_Tracking
                         select item_worker.identification;
 
             cb_intake_worker.DataSource = query.ToList();
+        }
+        // Intake - Save Intake
+        private void btn_intake_insert_Click(object sender, EventArgs e)
+        {
+            if (
+                cb_intake_product.Text.Trim().Length == 0 ||
+                cb_intake_worker.Text.Trim().Length == 0 ||
+                tb_intake_amount.Text.Trim().Length == 0
+            )
+            {
+                MessageBox.Show("Lütfen Boş Bırakmayınız", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    if (Convert.ToInt32(tb_intake_amount.Text.Trim()) > 0)
+                    {
+                        // WORKER ID
+                        var worker_id = (from item in db.worker_table
+                                         where item.identification == cb_intake_worker.Text
+                                         select item.id).FirstOrDefault();
+
+                        // PRODUCT ID
+                        var product_id = (from item in db.product_table
+                                          where item.code == cb_intake_product.Text.ToString()
+                                          select item.id).FirstOrDefault();
+                        // PRODUCT SUPPLY AMOUNT
+                        var product_supply = db.supply_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
+
+                        // PRODUCT INTAKE AMOUNT
+                        var product_intake = db.intake_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
+
+                        int total_suply = Convert.ToInt32(product_supply);
+                        int total_intake = Convert.ToInt32(product_intake);
+                        int worker_intake = Convert.ToInt32(tb_intake_amount.Text.Trim());
+                        int new_intake = total_intake + worker_intake;
+
+                        //MessageBox.Show("PRODUCT ID: " + product_id);
+                        //MessageBox.Show("TOTAL PRODUCT AMOUNT: " + product_supply);
+                        //MessageBox.Show("TOTAL PRODUCT INTAKE: " + product_intake);
+                        //MessageBox.Show("NEW INTAKE: " + new_intake);
+
+                        if (product_supply >= new_intake) // NEW INTAKE
+                        {
+                            intake_table intake = new intake_table
+                            {
+                                product_id = product_id,
+                                worker_id = worker_id,
+                                admin_id = AdminID,
+                                amount = Convert.ToInt32(tb_intake_amount.Text.ToString())
+                            };
+
+                            db.intake_table.Add(intake);
+                            db.SaveChanges();
+
+                            MessageBox.Show("Alım Başarıyla Kaydedilmiştir");
+                            intakes();
+                            tb_intake_clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("STOKTA YETERLİ MAL BULUNMAMAKTADIR");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen 0 dan büyük değerler giriniz");
+                    }
+
+                }
+                catch
+                {
+                    MessageBox.Show("Lütfen geçerli değerler giriniz");
+                }
+            }
+        }
+        // Intake - Update Intake
+        private void btn_intake_update_Click(object sender, EventArgs e)
+        {
+            if (intakeID == 0)
+            {
+                MessageBox.Show("Lütfen Alım Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    if (Convert.ToInt32(tb_intake_amount.Text.Trim()) > 0)
+                    {
+                        // PRODUCT ID
+                        var product_id = (from item in db.product_table
+                                          where item.code == cb_intake_product.Text
+                                          select item.id).FirstOrDefault();
+
+                        var query_intake = (from item in db.intake_table
+                                            where item.id == intakeID
+                                            select item.amount).FirstOrDefault();
+
+                        int worker_intake_amount = Convert.ToInt32(query_intake.ToString());
+                        int worker_intake_new = Convert.ToInt32(tb_intake_amount.Text);
+
+                        // WORKER ID
+                        var worker_id = (from item in db.worker_table
+                                         where item.identification == cb_intake_worker.Text
+                                         select item.id).FirstOrDefault();
+
+                        if (worker_intake_amount >= worker_intake_new)
+                        {
+                            try
+                            {
+                                //MessageBox.Show("DAHA AZ MAL İSTİYOR");
+
+                                var update = db.intake_table.Find(intakeID);
+
+                                update.product_id = product_id;
+                                update.worker_id = worker_id;
+                                update.admin_id = AdminID;
+                                update.amount = worker_intake_new;
+
+                                db.SaveChanges();
+                                MessageBox.Show("Alım Başarıyla Güncellenmiştir.");
+
+                                intakes();
+                                tb_intake_clear();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Beklenmedik Bir Hata Oluştu");
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                //MessageBox.Show("DAHA FAZLA MAL İSTİYOR");
+
+                                // PRODUCT SUPPLY AMOUNT
+                                var product_supply = db.supply_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
+                                int total_suply = Convert.ToInt32(product_supply);
+
+                                // PRODUCT INTAKE AMOUNT
+                                var product_intake = db.intake_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
+                                int total_intake = Convert.ToInt32(product_intake);
+
+                                MessageBox.Show("TOPLAM TEDARİK: " + total_suply.ToString());
+                                MessageBox.Show("TOPLAM ALIM: " + total_intake.ToString());
+                                MessageBox.Show("ÇALIŞAN ÖNCEKİ ALIMI: " + worker_intake_amount.ToString());
+                                MessageBox.Show("ÇALIŞANIN ŞİMDİ İSTEDİĞİ: " + worker_intake_new.ToString());
+
+                                if(total_suply > ((total_intake - worker_intake_amount) + worker_intake_new))
+                                {
+                                    var update = db.intake_table.Find(intakeID);
+
+                                    update.product_id = product_id;
+                                    update.worker_id = worker_id;
+                                    update.admin_id = AdminID;
+                                    update.amount = worker_intake_new;
+
+                                    db.SaveChanges();
+                                    MessageBox.Show("Alım Başarıyla Güncellenmiştir.");
+
+                                    intakes();
+                                    tb_intake_clear();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("STOKTA YETERLİ MAL BULUNMAMAKTADIR");
+                                }
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Beklenmedik Bir Hata Oluştu");
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen 0 dan büyük değerler giriniz");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Lütfen geçerli değerler giriniz");
+                }
+            }
+        }
+        // Intake - Delete Intake
+        private void btn_intake_delete_Click(object sender, EventArgs e)
+        {
+            if(intakeID == 0)
+            {
+                MessageBox.Show("Lütfen Tedarik Seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var delete = db.intake_table.Find(intakeID);
+
+                db.intake_table.Remove(delete);
+
+                db.SaveChanges();
+
+                MessageBox.Show("Alım Başarıyla Silinmiştir.");
+                intakes();
+                tb_intake_clear();
+            }
+        }
+        // Intake - Clear Button
+        private void btn_intake_clear_Click(object sender, EventArgs e)
+        {
+            tb_intake_clear();
+        }
+        // Intake - Search Intake by Code
+        private void tb_intake_like_code_TextChanged(object sender, EventArgs e)
+        {
+            var query = from item_intake in db.intake_table
+                        join item_product in db.product_table
+                        on item_intake.product_id equals item_product.id
+                        join item_worker in db.worker_table
+                        on item_intake.worker_id equals item_worker.id
+                        join item_admin in db.worker_table
+                        on item_intake.admin_id equals item_admin.id
+                        where item_product.code.Contains(tb_intake_like_code.Text)
+                        select new
+                        {
+                            ID = item_intake.id,
+                            KOD = item_product.code,
+                            MARKA = item_product.brand,
+                            MODEL = item_product.model,
+                            ÇALIŞAN = item_worker.name_surname,
+                            ÇALIŞAN_TC = item_worker.identification,
+                            GÖREV = item_worker.rank,
+                            ADMIN = item_admin.name_surname,
+                            ADMIN_TC = item_admin.identification,
+                            MİKTAR = item_intake.amount,
+                            TARİH = item_intake.intake_date
+                        };
+
+            datagrid_intake.DataSource = query.ToList();
+        }
+        // Intake - Search Intake by Identification
+        private void tb_intake_like_identification_TextChanged(object sender, EventArgs e)
+        {
+            var query = from item_intake in db.intake_table
+                        join item_product in db.product_table
+                        on item_intake.product_id equals item_product.id
+                        join item_worker in db.worker_table
+                        on item_intake.worker_id equals item_worker.id
+                        join item_admin in db.worker_table
+                        on item_intake.admin_id equals item_admin.id
+                        where item_worker.identification.Contains(tb_intake_like_identification.Text)
+                        select new
+                        {
+                            ID = item_intake.id,
+                            KOD = item_product.code,
+                            MARKA = item_product.brand,
+                            MODEL = item_product.model,
+                            ÇALIŞAN = item_worker.name_surname,
+                            ÇALIŞAN_TC = item_worker.identification,
+                            GÖREV = item_worker.rank,
+                            ADMIN = item_admin.name_surname,
+                            ADMIN_TC = item_admin.identification,
+                            MİKTAR = item_intake.amount,
+                            TARİH = item_intake.intake_date
+                        };
+
+            datagrid_intake.DataSource = query.ToList();
         }
 
         // Close Form and Redirect to Router

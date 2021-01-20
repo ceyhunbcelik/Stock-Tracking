@@ -51,6 +51,7 @@ namespace Stock_Tracking
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picture_supply_product = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btn_supply_update = new System.Windows.Forms.Button();
             this.btn_supply_clear = new System.Windows.Forms.Button();
             this.btn_supply_delete = new System.Windows.Forms.Button();
             this.btn_supply_insert = new System.Windows.Forms.Button();
@@ -84,7 +85,6 @@ namespace Stock_Tracking
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.picture_intake_admin = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_supply_update = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -348,6 +348,20 @@ namespace Stock_Tracking
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "İŞLEMLER";
             // 
+            // btn_supply_update
+            // 
+            this.btn_supply_update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_supply_update.BackgroundImage")));
+            this.btn_supply_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_supply_update.FlatAppearance.BorderSize = 0;
+            this.btn_supply_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_supply_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_supply_update.Location = new System.Drawing.Point(170, 19);
+            this.btn_supply_update.Name = "btn_supply_update";
+            this.btn_supply_update.Size = new System.Drawing.Size(70, 70);
+            this.btn_supply_update.TabIndex = 11;
+            this.btn_supply_update.UseVisualStyleBackColor = true;
+            this.btn_supply_update.Click += new System.EventHandler(this.btn_supply_update_Click);
+            // 
             // btn_supply_clear
             // 
             this.btn_supply_clear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_supply_clear.BackgroundImage")));
@@ -417,9 +431,9 @@ namespace Stock_Tracking
             this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(10, 326);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(139, 20);
+            this.label23.Size = new System.Drawing.Size(121, 20);
             this.label23.TabIndex = 68;
-            this.label23.Text = "TEDARİKÇİLER";
+            this.label23.Text = "TEDARİKLER";
             // 
             // tabPage3
             // 
@@ -483,6 +497,7 @@ namespace Stock_Tracking
             this.tb_intake_like_identification.Name = "tb_intake_like_identification";
             this.tb_intake_like_identification.Size = new System.Drawing.Size(183, 24);
             this.tb_intake_like_identification.TabIndex = 59;
+            this.tb_intake_like_identification.TextChanged += new System.EventHandler(this.tb_intake_like_identification_TextChanged);
             // 
             // label10
             // 
@@ -502,6 +517,7 @@ namespace Stock_Tracking
             this.tb_intake_like_code.Name = "tb_intake_like_code";
             this.tb_intake_like_code.Size = new System.Drawing.Size(183, 24);
             this.tb_intake_like_code.TabIndex = 1;
+            this.tb_intake_like_code.TextChanged += new System.EventHandler(this.tb_intake_like_code_TextChanged);
             // 
             // label4
             // 
@@ -657,6 +673,7 @@ namespace Stock_Tracking
             this.btn_intake_clear.Size = new System.Drawing.Size(70, 70);
             this.btn_intake_clear.TabIndex = 10;
             this.btn_intake_clear.UseVisualStyleBackColor = true;
+            this.btn_intake_clear.Click += new System.EventHandler(this.btn_intake_clear_Click);
             // 
             // btn_intake_delete
             // 
@@ -670,6 +687,7 @@ namespace Stock_Tracking
             this.btn_intake_delete.Size = new System.Drawing.Size(70, 70);
             this.btn_intake_delete.TabIndex = 8;
             this.btn_intake_delete.UseVisualStyleBackColor = true;
+            this.btn_intake_delete.Click += new System.EventHandler(this.btn_intake_delete_Click);
             // 
             // btn_intake_insert
             // 
@@ -683,6 +701,7 @@ namespace Stock_Tracking
             this.btn_intake_insert.Size = new System.Drawing.Size(70, 70);
             this.btn_intake_insert.TabIndex = 7;
             this.btn_intake_insert.UseVisualStyleBackColor = true;
+            this.btn_intake_insert.Click += new System.EventHandler(this.btn_intake_insert_Click);
             // 
             // btn_intake_update
             // 
@@ -696,6 +715,7 @@ namespace Stock_Tracking
             this.btn_intake_update.Size = new System.Drawing.Size(70, 70);
             this.btn_intake_update.TabIndex = 9;
             this.btn_intake_update.UseVisualStyleBackColor = true;
+            this.btn_intake_update.Click += new System.EventHandler(this.btn_intake_update_Click);
             // 
             // groupBox13
             // 
@@ -724,23 +744,9 @@ namespace Stock_Tracking
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 326);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 20);
+            this.label9.Size = new System.Drawing.Size(86, 20);
             this.label9.TabIndex = 76;
-            this.label9.Text = "ÇALIŞANLAR";
-            // 
-            // btn_supply_update
-            // 
-            this.btn_supply_update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_supply_update.BackgroundImage")));
-            this.btn_supply_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_supply_update.FlatAppearance.BorderSize = 0;
-            this.btn_supply_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_supply_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_supply_update.Location = new System.Drawing.Point(170, 19);
-            this.btn_supply_update.Name = "btn_supply_update";
-            this.btn_supply_update.Size = new System.Drawing.Size(70, 70);
-            this.btn_supply_update.TabIndex = 11;
-            this.btn_supply_update.UseVisualStyleBackColor = true;
-            this.btn_supply_update.Click += new System.EventHandler(this.btn_supply_update_Click);
+            this.label9.Text = "ALIMLAR";
             // 
             // Transfer
             // 
