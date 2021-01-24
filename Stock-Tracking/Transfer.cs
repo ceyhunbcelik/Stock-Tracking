@@ -458,10 +458,6 @@ namespace Stock_Tracking
                         int worker_intake = Convert.ToInt32(tb_intake_amount.Text.Trim());
                         int new_intake = total_intake + worker_intake;
 
-                        //MessageBox.Show("PRODUCT ID: " + product_id);
-                        //MessageBox.Show("TOTAL PRODUCT AMOUNT: " + product_supply);
-                        //MessageBox.Show("TOTAL PRODUCT INTAKE: " + product_intake);
-                        //MessageBox.Show("NEW INTAKE: " + new_intake);
 
                         if (product_supply >= new_intake) // NEW INTAKE
                         {
@@ -559,18 +555,18 @@ namespace Stock_Tracking
 
                                 // PRODUCT SUPPLY AMOUNT
                                 var product_supply = db.supply_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
-                                int total_suply = Convert.ToInt32(product_supply);
+                                int total_supply = Convert.ToInt32(product_supply);
 
                                 // PRODUCT INTAKE AMOUNT
                                 var product_intake = db.intake_table.Where(p => p.product_id == product_id).Sum(p => p.amount);
                                 int total_intake = Convert.ToInt32(product_intake);
 
-                                MessageBox.Show("TOPLAM TEDARİK: " + total_suply.ToString());
-                                MessageBox.Show("TOPLAM ALIM: " + total_intake.ToString());
-                                MessageBox.Show("ÇALIŞAN ÖNCEKİ ALIMI: " + worker_intake_amount.ToString());
-                                MessageBox.Show("ÇALIŞANIN ŞİMDİ İSTEDİĞİ: " + worker_intake_new.ToString());
+                                //MessageBox.Show("TOPLAM TEDARİK: " + total_supply.ToString());
+                                //MessageBox.Show("TOPLAM ALIM: " + total_intake.ToString());
+                                //MessageBox.Show("ÇALIŞAN ÖNCEKİ ALIMI: " + worker_intake_amount.ToString());
+                                //MessageBox.Show("ÇALIŞANIN ŞİMDİ İSTEDİĞİ: " + worker_intake_new.ToString());
 
-                                if(total_suply > ((total_intake - worker_intake_amount) + worker_intake_new))
+                                if(total_supply >= ((total_intake - worker_intake_amount) + worker_intake_new))
                                 {
                                     var update = db.intake_table.Find(intakeID);
 
