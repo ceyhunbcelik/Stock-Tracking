@@ -185,6 +185,7 @@ namespace Stock_Tracking
             this.tb_supply_like_company.Size = new System.Drawing.Size(163, 24);
             this.tb_supply_like_company.TabIndex = 59;
             this.tb_supply_like_company.TextChanged += new System.EventHandler(this.tb_supply_like_company_TextChanged);
+            this.tb_supply_like_company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supply_like_company_KeyPress);
             // 
             // label11
             // 
@@ -205,6 +206,7 @@ namespace Stock_Tracking
             this.tb_supply_like_code.Size = new System.Drawing.Size(163, 24);
             this.tb_supply_like_code.TabIndex = 1;
             this.tb_supply_like_code.TextChanged += new System.EventHandler(this.tb_supply_like_code_TextChanged);
+            this.tb_supply_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supply_like_code_KeyPress);
             // 
             // label5
             // 
@@ -272,6 +274,7 @@ namespace Stock_Tracking
             this.tb_supply_amount.Name = "tb_supply_amount";
             this.tb_supply_amount.Size = new System.Drawing.Size(205, 24);
             this.tb_supply_amount.TabIndex = 5;
+            this.tb_supply_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supply_amount_KeyPress);
             // 
             // label2
             // 
@@ -498,6 +501,7 @@ namespace Stock_Tracking
             this.tb_intake_like_identification.Size = new System.Drawing.Size(183, 24);
             this.tb_intake_like_identification.TabIndex = 59;
             this.tb_intake_like_identification.TextChanged += new System.EventHandler(this.tb_intake_like_identification_TextChanged);
+            this.tb_intake_like_identification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_intake_like_identification_KeyPress);
             // 
             // label10
             // 
@@ -518,6 +522,7 @@ namespace Stock_Tracking
             this.tb_intake_like_code.Size = new System.Drawing.Size(183, 24);
             this.tb_intake_like_code.TabIndex = 1;
             this.tb_intake_like_code.TextChanged += new System.EventHandler(this.tb_intake_like_code_TextChanged);
+            this.tb_intake_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_intake_like_code_KeyPress);
             // 
             // label4
             // 
@@ -585,6 +590,7 @@ namespace Stock_Tracking
             this.tb_intake_amount.Name = "tb_intake_amount";
             this.tb_intake_amount.Size = new System.Drawing.Size(205, 24);
             this.tb_intake_amount.TabIndex = 5;
+            this.tb_intake_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_intake_amount_KeyPress);
             // 
             // label7
             // 

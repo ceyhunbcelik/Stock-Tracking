@@ -33,27 +33,34 @@ namespace Stock_Tracking
             } 
             else
             {
-                var query = (from item in db.admin_table
-                             where
-                                item.username == tb_admin_username.Text &
-                                item.password == tb_admin_password.Text
-                             select item).FirstOrDefault();
-
-                if (query != null)
+                try
                 {
+                    var query = (from item in db.admin_table
+                                 where
+                                    item.username == tb_admin_username.Text &
+                                    item.password == tb_admin_password.Text
+                                 select item).FirstOrDefault();
 
-                    Router router = new Router
+                    if (query != null)
                     {
-                        AdminID = (int)query.worker_id
-                    };
 
-                    this.Hide();
-                    router.Show();
+                        Router router = new Router
+                        {
+                            AdminID = (int)query.worker_id
+                        };
+
+                        this.Hide();
+                        router.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Böyle Bir Kullanıcı Bulunmamaktadır", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textbox_clear();
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Böyle Bir Kullanıcı Bulunmamaktadır", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textbox_clear();
+                    MessageBox.Show("Veritabanına bağlanılamadı", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

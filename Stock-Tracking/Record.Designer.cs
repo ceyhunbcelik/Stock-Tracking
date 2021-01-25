@@ -116,7 +116,6 @@ namespace Stock_Tracking
             this.tb_worker_identification = new System.Windows.Forms.MaskedTextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.open_file_dialog = new System.Windows.Forms.OpenFileDialog();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -246,6 +245,7 @@ namespace Stock_Tracking
             this.tb_product_brand.Name = "tb_product_brand";
             this.tb_product_brand.Size = new System.Drawing.Size(190, 24);
             this.tb_product_brand.TabIndex = 4;
+            this.tb_product_brand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_product_brand_KeyPress);
             // 
             // label1
             // 
@@ -265,6 +265,7 @@ namespace Stock_Tracking
             this.tb_product_code.Name = "tb_product_code";
             this.tb_product_code.Size = new System.Drawing.Size(190, 24);
             this.tb_product_code.TabIndex = 3;
+            this.tb_product_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_product_code_KeyPress);
             // 
             // label23
             // 
@@ -437,6 +438,7 @@ namespace Stock_Tracking
             this.tb_product_like_code.Size = new System.Drawing.Size(302, 24);
             this.tb_product_like_code.TabIndex = 1;
             this.tb_product_like_code.TextChanged += new System.EventHandler(this.tb_product_like_code_TextChanged);
+            this.tb_product_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_product_like_code_KeyPress);
             // 
             // label6
             // 
@@ -533,6 +535,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_company.Size = new System.Drawing.Size(302, 24);
             this.tb_supplier_like_company.TabIndex = 1;
             this.tb_supplier_like_company.TextChanged += new System.EventHandler(this.tb_supplier_like_company_TextChanged);
+            this.tb_supplier_like_company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_like_company_KeyPress);
             // 
             // label14
             // 
@@ -565,6 +568,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_person.Size = new System.Drawing.Size(302, 24);
             this.tb_supplier_like_person.TabIndex = 2;
             this.tb_supplier_like_person.TextChanged += new System.EventHandler(this.tb_supplier_like_person_TextChanged);
+            this.tb_supplier_like_person.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_like_person_KeyPress);
             // 
             // groupBox5
             // 
@@ -728,6 +732,7 @@ namespace Stock_Tracking
             this.tb_supplier_phone_2.Name = "tb_supplier_phone_2";
             this.tb_supplier_phone_2.Size = new System.Drawing.Size(200, 24);
             this.tb_supplier_phone_2.TabIndex = 7;
+            this.tb_supplier_phone_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_phone_2_KeyPress);
             // 
             // tb_supplier_phone_1
             // 
@@ -738,6 +743,7 @@ namespace Stock_Tracking
             this.tb_supplier_phone_1.Name = "tb_supplier_phone_1";
             this.tb_supplier_phone_1.Size = new System.Drawing.Size(200, 24);
             this.tb_supplier_phone_1.TabIndex = 6;
+            this.tb_supplier_phone_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_phone_1_KeyPress);
             // 
             // tb_supplier_address
             // 
@@ -788,6 +794,7 @@ namespace Stock_Tracking
             this.tb_supplier_person.Name = "tb_supplier_person";
             this.tb_supplier_person.Size = new System.Drawing.Size(200, 24);
             this.tb_supplier_person.TabIndex = 4;
+            this.tb_supplier_person.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_person_KeyPress);
             // 
             // label9
             // 
@@ -808,6 +815,7 @@ namespace Stock_Tracking
             this.tb_supplier_company.Name = "tb_supplier_company";
             this.tb_supplier_company.Size = new System.Drawing.Size(200, 24);
             this.tb_supplier_company.TabIndex = 3;
+            this.tb_supplier_company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_company_KeyPress);
             // 
             // label10
             // 
@@ -912,6 +920,7 @@ namespace Stock_Tracking
             this.tb_worker_like_name_surname.Size = new System.Drawing.Size(302, 24);
             this.tb_worker_like_name_surname.TabIndex = 2;
             this.tb_worker_like_name_surname.TextChanged += new System.EventHandler(this.tb_worker_like_name_surname_TextChanged);
+            this.tb_worker_like_name_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_like_name_surname_KeyPress);
             // 
             // tb_worker_like_identification
             // 
@@ -921,6 +930,7 @@ namespace Stock_Tracking
             this.tb_worker_like_identification.Size = new System.Drawing.Size(302, 24);
             this.tb_worker_like_identification.TabIndex = 1;
             this.tb_worker_like_identification.TextChanged += new System.EventHandler(this.tb_worker_like_identification_TextChanged);
+            this.tb_worker_like_identification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_like_identification_KeyPress);
             // 
             // groupBox13
             // 
@@ -1078,6 +1088,7 @@ namespace Stock_Tracking
             this.tb_worker_phone.Name = "tb_worker_phone";
             this.tb_worker_phone.Size = new System.Drawing.Size(184, 24);
             this.tb_worker_phone.TabIndex = 6;
+            this.tb_worker_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_phone_KeyPress);
             // 
             // label18
             // 
@@ -1124,6 +1135,7 @@ namespace Stock_Tracking
             this.tb_worker_name_surname.Name = "tb_worker_name_surname";
             this.tb_worker_name_surname.Size = new System.Drawing.Size(184, 24);
             this.tb_worker_name_surname.TabIndex = 4;
+            this.tb_worker_name_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_name_surname_KeyPress);
             // 
             // tb_worker_identification
             // 
@@ -1133,6 +1145,7 @@ namespace Stock_Tracking
             this.tb_worker_identification.Name = "tb_worker_identification";
             this.tb_worker_identification.Size = new System.Drawing.Size(184, 24);
             this.tb_worker_identification.TabIndex = 3;
+            this.tb_worker_identification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_identification_KeyPress);
             // 
             // label30
             // 
@@ -1154,7 +1167,7 @@ namespace Stock_Tracking
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1058, 673);
+            this.ClientSize = new System.Drawing.Size(1058, 684);
             this.Controls.Add(this.tabControl1);
             this.Name = "Record";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1210,7 +1223,6 @@ namespace Stock_Tracking
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.OpenFileDialog open_file_dialog;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btn_supplier_clear;

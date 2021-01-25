@@ -29,8 +29,8 @@ namespace Stock_Tracking
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Router));
             System.Windows.Forms.Button btn_router_dashboard;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Router));
             this.btn_router_admin = new System.Windows.Forms.Button();
             this.btn_router_record = new System.Windows.Forms.Button();
             this.btn_router_transfer = new System.Windows.Forms.Button();
@@ -40,20 +40,6 @@ namespace Stock_Tracking
             this.label3 = new System.Windows.Forms.Label();
             btn_router_dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btn_router_admin
-            // 
-            this.btn_router_admin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_router_admin.BackgroundImage")));
-            this.btn_router_admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_router_admin.FlatAppearance.BorderSize = 0;
-            this.btn_router_admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_router_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_router_admin.Location = new System.Drawing.Point(143, 147);
-            this.btn_router_admin.Name = "btn_router_admin";
-            this.btn_router_admin.Size = new System.Drawing.Size(100, 100);
-            this.btn_router_admin.TabIndex = 4;
-            this.btn_router_admin.UseVisualStyleBackColor = true;
-            this.btn_router_admin.Click += new System.EventHandler(this.btn_router_admin_Click);
             // 
             // btn_router_dashboard
             // 
@@ -68,6 +54,20 @@ namespace Stock_Tracking
             btn_router_dashboard.TabIndex = 1;
             btn_router_dashboard.UseVisualStyleBackColor = true;
             btn_router_dashboard.Click += new System.EventHandler(this.btn_router_dashboard_Click);
+            // 
+            // btn_router_admin
+            // 
+            this.btn_router_admin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_router_admin.BackgroundImage")));
+            this.btn_router_admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_router_admin.FlatAppearance.BorderSize = 0;
+            this.btn_router_admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_router_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_router_admin.Location = new System.Drawing.Point(143, 147);
+            this.btn_router_admin.Name = "btn_router_admin";
+            this.btn_router_admin.Size = new System.Drawing.Size(100, 100);
+            this.btn_router_admin.TabIndex = 4;
+            this.btn_router_admin.UseVisualStyleBackColor = true;
+            this.btn_router_admin.Click += new System.EventHandler(this.btn_router_admin_Click);
             // 
             // btn_router_record
             // 
@@ -157,7 +157,7 @@ namespace Stock_Tracking
             this.Controls.Add(this.btn_router_record);
             this.Name = "Router";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Router";
+            this.Text = "YÖNLENDİRME PANELİ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Router_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -144,6 +144,7 @@ namespace Stock_Tracking
             this.tb_worker_like_name_surname.Size = new System.Drawing.Size(416, 24);
             this.tb_worker_like_name_surname.TabIndex = 2;
             this.tb_worker_like_name_surname.TextChanged += new System.EventHandler(this.tb_worker_like_name_surname_TextChanged);
+            this.tb_worker_like_name_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_like_name_surname_KeyPress);
             // 
             // tb_worker_like_identification
             // 
@@ -153,6 +154,7 @@ namespace Stock_Tracking
             this.tb_worker_like_identification.Size = new System.Drawing.Size(398, 24);
             this.tb_worker_like_identification.TabIndex = 1;
             this.tb_worker_like_identification.TextChanged += new System.EventHandler(this.tb_worker_like_identification_TextChanged);
+            this.tb_worker_like_identification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_worker_like_identification_KeyPress);
             // 
             // label15
             // 
@@ -239,6 +241,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_person.Size = new System.Drawing.Size(441, 24);
             this.tb_supplier_like_person.TabIndex = 2;
             this.tb_supplier_like_person.TextChanged += new System.EventHandler(this.tb_supplier_like_person_TextChanged);
+            this.tb_supplier_like_person.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_like_person_KeyPress);
             // 
             // tb_supplier_like_company
             // 
@@ -248,6 +251,7 @@ namespace Stock_Tracking
             this.tb_supplier_like_company.Size = new System.Drawing.Size(356, 24);
             this.tb_supplier_like_company.TabIndex = 1;
             this.tb_supplier_like_company.TextChanged += new System.EventHandler(this.tb_supplier_like_company_TextChanged);
+            this.tb_supplier_like_company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supplier_like_company_KeyPress);
             // 
             // label12
             // 
@@ -334,6 +338,7 @@ namespace Stock_Tracking
             this.tb_product_like_brand.Size = new System.Drawing.Size(446, 24);
             this.tb_product_like_brand.TabIndex = 2;
             this.tb_product_like_brand.TextChanged += new System.EventHandler(this.tb_product_like_brand_TextChanged);
+            this.tb_product_like_brand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_product_like_brand_KeyPress);
             // 
             // tb_product_like_code
             // 
@@ -343,6 +348,7 @@ namespace Stock_Tracking
             this.tb_product_like_code.Size = new System.Drawing.Size(383, 24);
             this.tb_product_like_code.TabIndex = 1;
             this.tb_product_like_code.TextChanged += new System.EventHandler(this.tb_product_like_code_TextChanged);
+            this.tb_product_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_product_like_code_KeyPress);
             // 
             // label9
             // 
@@ -430,6 +436,7 @@ namespace Stock_Tracking
             this.tb_intake_like_identification.Size = new System.Drawing.Size(446, 24);
             this.tb_intake_like_identification.TabIndex = 2;
             this.tb_intake_like_identification.TextChanged += new System.EventHandler(this.tb_intake_like_identification_TextChanged);
+            this.tb_intake_like_identification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_intake_like_identification_KeyPress);
             // 
             // tb_intake_like_code
             // 
@@ -439,6 +446,7 @@ namespace Stock_Tracking
             this.tb_intake_like_code.Size = new System.Drawing.Size(418, 24);
             this.tb_intake_like_code.TabIndex = 1;
             this.tb_intake_like_code.TextChanged += new System.EventHandler(this.tb_intake_like_code_TextChanged);
+            this.tb_intake_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_intake_like_code_KeyPress);
             // 
             // label6
             // 
@@ -525,6 +533,7 @@ namespace Stock_Tracking
             this.tb_supply_like_company.Size = new System.Drawing.Size(444, 24);
             this.tb_supply_like_company.TabIndex = 2;
             this.tb_supply_like_company.TextChanged += new System.EventHandler(this.tb_supply_like_company_TextChanged);
+            this.tb_supply_like_company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supply_like_company_KeyPress);
             // 
             // tb_supply_like_code
             // 
@@ -534,6 +543,7 @@ namespace Stock_Tracking
             this.tb_supply_like_code.Size = new System.Drawing.Size(383, 24);
             this.tb_supply_like_code.TabIndex = 1;
             this.tb_supply_like_code.TextChanged += new System.EventHandler(this.tb_supply_like_code_TextChanged);
+            this.tb_supply_like_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_supply_like_code_KeyPress);
             // 
             // label2
             // 
