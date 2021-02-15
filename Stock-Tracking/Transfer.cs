@@ -547,7 +547,8 @@ namespace Stock_Tracking
                                 product_id = product_id,
                                 worker_id = worker_id,
                                 admin_id = AdminID,
-                                amount = Convert.ToInt32(tb_intake_amount.Text.ToString())
+                                amount = Convert.ToInt32(tb_intake_amount.Text.ToString()),
+                                intake_date = DateTime.Now
                             };
 
                             db.intake_table.Add(intake);
@@ -773,7 +774,7 @@ namespace Stock_Tracking
             catch
             {
                 MessageBox.Show("Veritabanına bağlanılamadı", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+             }
         }
 
         // Close Form and Redirect to Router

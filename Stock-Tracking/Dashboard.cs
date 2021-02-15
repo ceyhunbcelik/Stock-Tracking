@@ -293,6 +293,7 @@ namespace Stock_Tracking
                             where item.code.Contains(tb_product_like_code.Text)
                             select new
                             {
+                                ID = item.id,
                                 KOD = item.code,
                                 MARKA = item.brand,
                                 MODEL = item.model
@@ -314,6 +315,7 @@ namespace Stock_Tracking
                             where item.brand.Contains(tb_product_like_brand.Text)
                             select new
                             {
+                                ID = item.id,
                                 KOD = item.code,
                                 MARKA = item.brand,
                                 MODEL = item.model
